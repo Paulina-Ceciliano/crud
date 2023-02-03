@@ -1,15 +1,28 @@
 <?php
 
-class ControladorUsuarios {
+class ControladorUsuarios extends Controller {
 
     function __construct() {
-        
+        parent::__construct();
     }
-    public function insertarUsuario($usuario) {
+
+    public function index() {
+        return $this->view("welcome");
+    }
+
+    public function formCrearUsuario() {
+        return $this->view("usuarios/registrarusuario");
+    }
+
+    public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();
-        $id = $usuarioModel->insert($usuario);
-        $insersionExitosa = ($id > 0);
-        $respuesta = new Respuesta($insersionExitosa ? EMensajes::INSERCION_EXITOSA : EMensajes::ERROR_INSERSION);
+        $usuario = $usuarioModel->where("correo", "=", $request->correo)->first();
+        if ($usuario) {
+            return new Respuesta(EMensajes::ERROR, "El correo ya se encuntra registrado.");
+        }
+        $id = $usuarioModel->insert($request->all());
+        $v = ($id > 0);
+        $respuesta = new Respuesta($v ? EMensajes::INSERCION_EXITOSA : EMensajes::ERROR_INSERSION);
         $respuesta->setDatos($id);
         return $respuesta;
     }
@@ -25,24 +38,24 @@ class ControladorUsuarios {
 
     public function actualizarUsuario($usuario) {
         $usuarioModel = new Usuarios();
-        $actualizados = $usuarioModel->where("id", "=", $usuario["idUsuario"])->update($usuario);
+        $actualizados = $usuarioModel->where("id", " = ", $usuario["idUsuario"])
+                ->update($usuario);
         $v = ($actualizados > 0);
         return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
-
     }
 
-    public function eliminarUsuario($idUsaurio) {
+    public function eliminarusuario($idUsuario) {
         $usuarioModel = new Usuarios();
-        $eliminados = $usuarioModel->where("id", "=", $idUsaurio)->delete();
+        $eliminados = $usuarioModel->where("id", " = ", $idUsuario)->delete();
         $v = ($eliminados > 0);
         return new Respuesta($v ? EMensajes::ELIMINACION_EXITOSA : EMensajes::ERROR_ELIMINACION);
     }
 
     public function buscarUsuarioPorId($idUsuario) {
         $usuarioModel = new Usuarios();
-        $usuario = $usuarioModel->where("id", "=", $idUsuario)->first();
+        $usuario = $usuarioModel->where("id", " = ", $idUsuario)->first();
         $v = ($usuario != null);
-        $respuesta = new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
+        return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
 
 }

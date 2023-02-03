@@ -70,48 +70,48 @@ class Usuarios extends ModeloGenerico {
     }
 
     //SETTERS
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
 
-    public function setNombre($nombre): void
+    public function setNombre($nombre)
     {
         $this->nombre = $nombre;
     }
 
-    public function setApellido($apellido): void
+    public function setApellido($apellido)
     {
         $this->apellido = $apellido;
     }
 
-    public function setUsername($username): void
+    public function setUsername($username)
     {
         $this->username = $username;
     }
 
-    public function setCorreo($correo): void
+    public function setCorreo($correo)
     {
         $this->correo = $correo;
     }
 
 
-    public function setPassword($password): void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
 
-    public function setFecha($fecha): void
+    public function setFecha($fecha)
     {
         $this->fecha = $fecha;
     }
 
-    public function setIdRol($idRol): void
+    public function setIdRol($idRol)
     {
         $this->idRol = $idRol;
     }
 
-    public function setEstatus($estatus): void
+    public function setEstatus($estatus)
     {
         $this->estatus = $estatus;
     }

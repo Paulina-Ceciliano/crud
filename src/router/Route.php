@@ -9,7 +9,7 @@ class Route {
     private static $uris = array();
 
     public static function add($method, $uri, $function = null) {
-        Route::$uris[] = new Uri((new Route)->parseUri($uri), $method, $function);
+        Route::$uris[] = new Uri(self::parseUri($uri), $method, $function);
         //Retornará un Middleware...
         return;
     }
@@ -34,7 +34,7 @@ class Route {
         return Route::add("ANY", $uri, $function);
     }
 
-    private function parseUri($uri) {
+    private static function parseUri($uri) {
         $uri = trim($uri, '/');
         $uri = (strlen($uri) > 0) ? $uri : '/';
         return $uri;
@@ -43,7 +43,7 @@ class Route {
     public static function submit() {
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = isset($_GET['uri']) ? $_GET['uri'] : '';
-        $uri = (new Route)->parseUri($uri);
+        $uri = self::parseUri($uri);
 
         //Verifica si la uri que está pidiendo el usuario se encuentra registrada...
         foreach (Route::$uris as $key => $recordUri) {

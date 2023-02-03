@@ -22,6 +22,7 @@ class Crud {
             echo $exc->getTraceAsString();
         }
     }
+
     public function first() {
         $lista = $this->get();
         if (count($lista) > 0) {

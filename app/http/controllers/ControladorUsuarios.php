@@ -7,11 +7,7 @@ class ControladorUsuarios extends Controller {
     }
 
     public function index() {
-        return $this->view("welcome");
-    }
-
-    public function formCrearUsuario() {
-        return $this->view("usuarios/registrarusuario");
+        return $this->view("inicio");
     }
 
     public function insertarUsuario(Request $request) {

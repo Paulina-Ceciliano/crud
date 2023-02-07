@@ -12,19 +12,8 @@
         </div>
         <div class="card-body">
             <hr/>
-            <form id="formUsuario" action="usuarios/registrar" method="POST" >
-                <div class="form-group">
-                    <label for="nombre">Nombre(s)(*)</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required="required"/>
-                </div>
-                <div class="form-group">
-                    <label for="apellido">Apellidos (*)</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required="required"/>
-                </div>
-                <div class="form-group">
-                    <label for="username">Usuario(*)</label>
-                    <input type="text" class="form-control" id="username" name="username" required="required"/>
-                </div>
+            <h4 class="card-title mb-4">Registrar usuarios</h4>
+            <form id="formUsuario" action="usuarios/login" method="POST" >
                 <div class="form-group">
                     <label for="correo">Correo(*)</label>
                     <input type="email" class="form-control" id="correo" name="correo" required="required"/>
@@ -34,7 +23,7 @@
                     <input type="password" class="form-control" id="password" name="password" required="required"/>
                 </div>
                 <div class="form-group text-right">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
             </form>
         </div>
@@ -45,7 +34,7 @@
 <script src="<?= URL::to("assets/js/global/helperform.js"  )?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js"  )?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js")?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/registrar.usuarios.js")?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/login.usuarios.js")?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js")?>" type="text/javascript"></script>
 
 </body>

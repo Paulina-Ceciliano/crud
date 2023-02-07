@@ -10,16 +10,41 @@ class ControladorUsuarios extends Controller {
         return $this->view("inicio");
     }
 
+    public function  formCrearUsuario(){
+        return $this->view("usuarios/registrarusuario");
+    }
+
+    public function formLogin(){
+        return $this->view('usuarios/login');
+    }
+
+    public function login(){
+
+    }
+
     public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();
-        $usuario = $usuarioModel->where("correo", "=", $request->correo)->first();
+        $usuario = $usuarioModel->where("correo", "=", $request->correo)
+            ->orWhere("username", "=", $request->username)->first();
         if ($usuario) {
-            return new Respuesta(EMensajes::ERROR, "El correo ya se encuntra registrado.");
+            return new Respuesta(EMensajes::ERROR, "El correo o nombre de usuario ya se encuentran registrados.");
         }
+
+        //Esto se hace para añadir campos al request
+        $request->__set('fecha', date('d-m-Y'));
+        $request->__set('estatus', 'Inactivo');
+        $request->__set('idRol', 2);
+
+        //Encriptar contraseña
+        $request->password = md5($request->password);
+
         $id = $usuarioModel->insert($request->all());
         $v = ($id > 0);
         $respuesta = new Respuesta($v ? EMensajes::INSERCION_EXITOSA : EMensajes::ERROR_INSERSION);
         $respuesta->setDatos($id);
+
+        //$this->enviarCorreo($request->correo, "Solicitud de registro", "Su solicitud ha sido recibida y está pendiente de validación");
+
         return $respuesta;
     }
 
@@ -53,5 +78,10 @@ class ControladorUsuarios extends Controller {
         $v = ($usuario != null);
         return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
+
+    /*public function enviarCorreo($destinatario, $asunto, $mensaje) {
+        $headers = "From: gibbymetal@hotmail.com";
+        mail($destinatario, $asunto, $mensaje, $headers);
+    }*/
 
 }

@@ -4,35 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="enrutador listo">
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/global/app.global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/global/helperform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/plugins/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/modulos/login.usuarios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/registrarusuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +41,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -79,11 +69,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\crud\assets\plugins" />
       <recent name="C:\xampp\htdocs\crud\assets\js\global" />
       <recent name="C:\xampp\htdocs\crud\assets" />
     </key>
@@ -102,7 +100,8 @@
       <workItem from="1675636234950" duration="9536000" />
       <workItem from="1675698426307" duration="88000" />
       <workItem from="1675699147129" duration="31000" />
-      <workItem from="1675699240177" duration="508000" />
+      <workItem from="1675699240177" duration="13195000" />
+      <workItem from="1675785076323" duration="5754000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -118,16 +117,40 @@
       <option name="project" value="LOCAL" />
       <updated>1675459422705</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="método listar">
+      <created>1675700017245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675700017245</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="rutas" />
     <MESSAGE value="enrutador listo" />
-    <option name="LAST_COMMIT_MESSAGE" value="enrutador listo" />
+    <MESSAGE value="método listar" />
+    <option name="LAST_COMMIT_MESSAGE" value="método listar" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

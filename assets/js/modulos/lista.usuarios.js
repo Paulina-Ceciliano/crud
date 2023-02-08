@@ -1,39 +1,42 @@
 var vista = {
-    controles:{
+    controles: {
         tbodyListaUsuarios: $('#tablaListaUsuarios tbody')
     },
-    init: function (){
+    init: function () {
         vista.eventos();
-        vista.peticiones.listaUsuarios();
+        vista.peticiones.listarUsuarios();
     },
-    eventos: function (){},
+    eventos: function () {
+
+    },
     callbacks: {
-        eventos: {},
+        eventos: {
+
+        },
         peticiones: {
-            listarUsuarios:{
-                beforeSend: function (){
+            listarUsuarios: {
+                beforeSend: function () {
                     var tbody = vista.controles.tbodyListaUsuarios;
                     tbody.html(vista.utils.templates.consultando());
                 },
-                completo: function (respuesta){
-                    var tbody = vista. controles.tbodyListaUsuarios;
+                completo: function (respuesta) {
+                    var tbody = vista.controles.tbodyListaUsuarios;
                     var datos = __app.parsearRespuesta(respuesta);
-                    if(datos && datos.length > 0){
+                    if (datos && datos.length > 0) {
                         tbody.html('');
-                        for (var i = 0; i < datos.length; i++){
+                        for (var i = 0; i < datos.length; i++) {
                             var dato = datos[i];
                             tbody.append(vista.utils.templates.item(dato));
                         }
-
-                    }else{
+                    } else {
                         tbody.html(vista.utils.templates.noHayRegistros());
                     }
                 }
             }
         }
     },
-    peticiones:{
-        listaUsuarios: function(){
+    peticiones: {
+        listarUsuarios: function () {
             __app.get(RUTAS_API.USUARIOS.LISTAR)
                 .beforeSend(vista.callbacks.peticiones.listarUsuarios.beforeSend)
                 .success(vista.callbacks.peticiones.listarUsuarios.completo)
@@ -41,9 +44,9 @@ var vista = {
                 .send();
         }
     },
-    utils:{
-        templates:{
-            item:function(obj){
+    utils: {
+        templates: {
+            item: function (obj) {
                 return '<tr>'
                     +'<td>'+ obj.nombre +'</td>'
                     +'<td>'+ obj.apellido +'</td>'
@@ -58,13 +61,13 @@ var vista = {
                     +'<td>'
                     +'<tr>'
             },
-            consultando: function (){
+            consultando: function () {
                 return '<tr><td colspan="6">Consultando...</td></tr>'
             },
-            noHayRegistros: function (){
-                return '<tr><td colspan="6">No hay registros...</td></tr>'
+            noHayRegistros: function () {
+                return '<tr><td colspan="6">No hay registros...</td></tr>';
             }
         }
-    }
+    },
 };
 $(vista.init);

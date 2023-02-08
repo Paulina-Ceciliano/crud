@@ -1,45 +1,45 @@
 var vista = {
     controles: {
-        formUsuarios: $('#formUsuario'),
+        formUsuario: $('#formUsuario'),
     },
-    init: function(){
+    init: function () {
         vista.eventos();
     },
-    eventos: function() {
-        vista.controles.formUsuarios.on('submit', vista.callbacks.eventos.accionesFormRegistro.ejecutar)
+    eventos: function () {
+        vista.controles.formUsuario.on('submit', vista.callbacks.eventos.accionesFormRegistro.ejecutar);
     },
     callbacks: {
         eventos: {
             accionesFormRegistro: {
-                ejecutar: function (evento){
+                ejecutar: function (evento) {
                     __app.detenerEvento(evento);
-                    var form = vista.controles.formUsuarios;
+                    var form = vista.controles.formUsuario;
                     var obj = form.getFormData();
                     console.log(obj);
                     vista.peticiones.registrarUsuario(obj);
                 }
             }
         },
-        peticiones:{
-            beforeSend: function(){
-                vista.controles.formUsuarios.find('input,button').prop('disabled', true);
+        peticiones: {
+            beforeSend: function () {
+                vista.controles.formUsuario.find('input,button').prop('disabled', true);
             },
-            completo: function (){
-                vista.controles.formUsuarios.find('input,button').prop('disabled', false);
+            completo: function () {
+                vista.controles.formUsuario.find('input,button').prop('disabled', false);
             },
-            finalizado: function (respuesta){
-                if(__app.validarRespuesta(respuesta)){
-                    vista.controles.formUsuarios.find('input').val('');
-                    swal('Correcto','Se ha registrado correctamente el usuario', 'success');
+            finalizado: function (respuesta) {
+                if (__app.validarRespuesta(respuesta)) {
+                    vista.controles.formUsuario.find('input').val('');
+                    swal('Correcto', 'Se ha registrado correctamente el usuario', 'success');
                     return;
                 }
-                swal('Error', respuesta.mensaje,'error');
+                swal('Error', respuesta.mensaje, 'error');
             }
         }
     },
     peticiones: {
-        registrarUsuario: function (obj){
-            __app.post(RUTAS_API.USUARIOS.REGISTRAR_USUARIO,obj)
+        registrarUsuario: function (obj) {
+            __app.post(RUTAS_API.USUARIOS.REGISTRAR_USUARIO, obj)
                 .beforeSend(vista.callbacks.peticiones.beforeSend)
                 .complete(vista.callbacks.peticiones.completo)
                 .success(vista.callbacks.peticiones.finalizado)

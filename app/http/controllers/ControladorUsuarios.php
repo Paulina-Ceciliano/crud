@@ -1,18 +1,42 @@
 <?php
 
-class ControladorUsuarios extends Controller {
+class ControladorUsuarios extends Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
-    public function index() {
-        return $this->view("inicio");
+    public function index()
+    {
+        return $this->view("inicio.php");
     }
 
-    public function  formCrearUsuario(){
+    public function lista()
+    {
+        return $this->view("usuarios/listausuarios");
+    }
+
+    public function formCrearUsuario()
+    {
         return $this->view("usuarios/registrarusuario");
     }
+
+    public function formEdicionUsuario()
+    {
+        $variables = [
+            'titulo' => 'Actualizar información'
+        ];
+        return $this->view("usuarios/registrarusuario", $variables);
+    }
+
+    /*public function login(Request $request)
+    {
+        $usuarioModel = new Usuarios();
+        $usuario = $usuarioModel->where("correo", "=", $request->correo)
+            ->orWhere("password", "=", md5($request->password))->first();
+    }*/
 
     public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();
@@ -52,7 +76,7 @@ class ControladorUsuarios extends Controller {
     public function actualizarUsuario($usuario) {
         $usuarioModel = new Usuarios();
         $actualizados = $usuarioModel->where("id", " = ", $usuario["idUsuario"])
-                ->update($usuario);
+            ->update($usuario);
         $v = ($actualizados > 0);
         return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
     }

@@ -8,11 +8,10 @@
 <div class="container">
     <div class = "card mt-5">
         <div class="card-header bg-dark text-white">
-            <h5>Solicitud de registro </h5>
+            <h5>Inicio de sesión </h5>
         </div>
         <div class="card-body">
             <hr/>
-            <h4 class="card-title mb-4">Registrar usuarios</h4>
             <form id="formUsuario" action="usuarios/login" method="POST" >
                 <div class="form-group">
                     <label for="correo">Correo(*)</label>

@@ -7,4 +7,4 @@ Route::get("/usuarios/form/login", ControladorUsuarios::class."@formCrearUsuario
 
 //RECURSOS
 Route::post("/usuarios/registrar", ControladorUsuarios::class."@insertarUsuario");
-Route::post("/usuarios/login", ControladorUsuarios::class."@login");
+Route::post("/usuarios/login", ControladorUsuarios::class."@");

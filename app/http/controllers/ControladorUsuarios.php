@@ -14,14 +14,6 @@ class ControladorUsuarios extends Controller {
         return $this->view("usuarios/registrarusuario");
     }
 
-    public function formLogin(){
-        return $this->view('usuarios/login');
-    }
-
-    public function login(){
-
-    }
-
     public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();
         $usuario = $usuarioModel->where("correo", "=", $request->correo)

@@ -7,14 +7,13 @@
 <div class="container">
     <div class = "card mt-5">
         <div class="card-header bg-dark text-white">
-            <h5>Proyecto</h5>
+            <h5>Solicitudes pendientes</h5>
         </div>
         <div class="card-body">
             <div class="btn-group">
                 <a href="<?= URL::to("usuarios/form/crear") ?>" class="btn btn-primary">Crear usuario</a>
             </div>
             <hr/>
-            <h4 class="card-title mb-4">Listar usuarios</h4>
             <table class="table table-condensed table-hover table-striped" width="100%" id="tablaListaUsuarios" >
                 <thead class="bg-dark text-white">
                 <tr>

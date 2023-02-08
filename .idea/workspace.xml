@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/login.usuarios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/usuarios/registrarusuario.php" afterDir="false" />
+    <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inicio.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inicio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/usuarios/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +96,8 @@
       <workItem from="1675698426307" duration="88000" />
       <workItem from="1675699147129" duration="31000" />
       <workItem from="1675699240177" duration="13195000" />
-      <workItem from="1675785076323" duration="5754000" />
+      <workItem from="1675785076323" duration="7420000" />
+      <workItem from="1675870529861" duration="838000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -124,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675700017245</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changes">
+      <created>1675794668522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675794668522</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changes">
+      <created>1675794695592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675794695592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +157,8 @@
     <MESSAGE value="rutas" />
     <MESSAGE value="enrutador listo" />
     <MESSAGE value="método listar" />
-    <option name="LAST_COMMIT_MESSAGE" value="método listar" />
+    <MESSAGE value="Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

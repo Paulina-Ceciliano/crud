@@ -8,7 +8,7 @@
 </head>
 <body  data-urlbase=" <?= URL::base()?>">
 <div class="container">
-    <div class = "card mx-auto" style="width: 500px" >
+    <div class = "card mx-auto mt-5" style="width: 500px" >
         <div class="card-header text-center bg-dark text-white">
             <h5>Inicio de sesión </h5>
         </div>
@@ -23,7 +23,7 @@
                     <label for="password">Contraseña(*)</label>
                     <input type="password" class="form-control" id="password" name="password" required="required"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group  mt-3">
                     <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
             </form>

@@ -11,7 +11,7 @@
         <div class="card-header text-center bg-dark text-white">
             <h5>Solicitudes</h5>
         </div>
-        <div class="card-body">
+        <div class="card-body mt-5">
             <div class="btn-group">
                 <a href="crearusuario"></a>
                 <a href="<?= URL::to("usuarios/form/crear") ?>" class="btn btn-primary">Crear usuario</a>

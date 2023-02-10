@@ -1,0 +1,10 @@
+body {
+    background: #2c2c32;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    height:100%;
+}
+
+.contenedor-principal{
+    margin-top: 75px;
+}

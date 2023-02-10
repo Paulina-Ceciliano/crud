@@ -3,13 +3,13 @@
 
 <head>
     <title>IGM</title>
-    <link href="<?= URL::to("assets/bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= URL::to("assets/css/") ?>" rel="stylesheet" type="text/css"/>
     <link href="<?= URL::to("assets/plugins/sweetalert/sweetalert.css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 <div class="container">
     <div class= "card mx-auto mt-5" style="width: 500px">
-        <div class="card-header text-center bg-dark text-white">
+        <div class="card-header">
             <h5>Solicitud de registro</h5>
         </div>
         <div class="card-body">
@@ -39,7 +39,7 @@
                     <label for="password">Contraseña(*)</label>
                     <input type="password" class="form-control" id="password" name="password" required="required"/>
                 </div>
-                <div class="form-group text-right mt-3">
+                <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>

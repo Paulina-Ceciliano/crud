@@ -10,7 +10,11 @@ class ControladorUsuarios extends Controller
 
     public function index()
     {
-        return $this->view("inicio.php");
+        return $this->view("login.php");
+    }
+
+    public function home(){
+        return $this->view("usuarios/home");
     }
 
     public function lista()
@@ -18,9 +22,14 @@ class ControladorUsuarios extends Controller
         return $this->view("usuarios/listausuarios");
     }
 
+    public function formPagos()
+    {
+        return $this->view("usuarios/formPagos");
+    }
+
     public function formCrearUsuario()
     {
-        return $this->view("usuarios/registrarusuario");
+        return $this->view("registrarusuario");
     }
 
     public function formEdicionUsuario()
@@ -31,12 +40,18 @@ class ControladorUsuarios extends Controller
         return $this->view("usuarios/registrarusuario", $variables);
     }
 
-    /*public function login(Request $request)
-    {
+    public function login(Request $request) {
         $usuarioModel = new Usuarios();
         $usuario = $usuarioModel->where("correo", "=", $request->correo)
-            ->orWhere("password", "=", md5($request->password))->first();
-    }*/
+            ->where("password", "=", md5($request->password))
+            ->first();
+
+        if ($usuario) {
+            return new Respuesta(EMensajes::CORRECTO, "Se hace login");
+        }
+
+        return new Respuesta(EMensajes::ERROR, "Datos de usuario no encontrados o incorrectos");
+    }
 
     public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();

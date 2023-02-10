@@ -3,7 +3,7 @@
 
 <head>
     <title>IGM</title>
-    <link href="<?= URL::to("assets/bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= URL::to("assets/css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 <div class="container">
@@ -40,7 +40,6 @@
     </div>
 </div>
 <script src="<?= URL::to("assets/plugins/jquery.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/bootstrap/js/bootstrap.min.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>

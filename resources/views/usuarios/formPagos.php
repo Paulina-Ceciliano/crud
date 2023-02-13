@@ -59,21 +59,48 @@
     <div class="contenedor-principal">
         <div class="card-forms">
             <div class="card-header">
-                <h5>Registro de Pagos</h5>
+                <h5>Mensualidades</h5>
             </div>
             <div class="card-body">
                 <hr/>
-                <form id="formPagos" action="usuarios/registroPagos" method="POST">
+                <form id="formPagos" action="usuarios/registroPagos" method="POST" autocomplete="off" >
                     <div class="form-group">
-                        <label for="username">Usuario(*)</label>
-                        <input type="text" class="form-control" id="username" name="username" required="required"/>
+                        <label for="cobrador">Cobrador(*)</label>
+                        <select>
+                            <option>Seleccione...</option>
+                            <option>Kevin Diaz</option>
+                            <option>Paulina Ceciliano </option>
+                            <option>Karla Sandoval</option>
+                            <option>Ehtan Esquivel</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="username">Usuario(*)</label>
-                        <input type="text" class="form-control" id="username" name="username" required="required"/>
+                        <label for="alumno">Alumno (*)</label>
+                        <input type="text" class="form-control" id="alumno" name="alumno" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="concepto">Concepto (*)</label>
+                        <input type="text" class="form-control" id="concepto" name="concepto" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="atraso">Atraso (*)</label>
+                        <select>
+                            <option>5%</option>
+                            <option>10%</option>
+                            <option>15%</option>
+                            <option>20%</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="monto">Monto a pagar(*)</label>
+                        <input type="number" class="form-control" id="monto" name="monto" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha (*)</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" required="required"/>
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
             </div>

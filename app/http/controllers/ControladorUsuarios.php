@@ -22,11 +22,6 @@ class ControladorUsuarios extends Controller
         return $this->view("usuarios/listausuarios");
     }
 
-    public function formPagos()
-    {
-        return $this->view("usuarios/formPagos");
-    }
-
     public function formCrearUsuario()
     {
         return $this->view("registrarusuario");

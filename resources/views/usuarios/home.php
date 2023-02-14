@@ -65,6 +65,5 @@
     const toggleMenu = () => document.body.classList.toggle("open");
 </script>
 <script src="<?= URL::to("assets/plugins/jquery.js")?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/bootstrap/js/bootstrap.min.js")?>"  type="text/javascript"></script>
 </body>
 </html>

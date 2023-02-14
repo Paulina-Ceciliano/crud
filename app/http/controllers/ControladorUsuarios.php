@@ -105,6 +105,14 @@ class ControladorUsuarios extends Controller
         return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
 
+    public function buscarUsuarioPorCadena($idUsuario) {
+        $usuarioModel = new Usuarios();
+        //Se debe realizar una búsqueda con la sentencia LIKE de SQL
+        $usuario = $usuarioModel->where("id", " = ", $idUsuario)->first();
+        $v = ($usuario != null);
+        return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
+    }
+
     /*public function enviarCorreo($destinatario, $asunto, $mensaje) {
         $headers = "From: gibbymetal@hotmail.com";
         mail($destinatario, $asunto, $mensaje, $headers);

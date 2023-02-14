@@ -51,25 +51,22 @@
 </nav>
 
 <main>
-
     <div class="contenedor-principal">
         <div class="card mt-5">
             <div class="card-header">
-                <h5>Solicitudes</h5>
+                <h5>Lista de pagos realizados</h5>
             </div>
             <div class="card-body mt-5">
                 <hr/>
-                <h4 class="card-title mb-4"> Lista de usuarios en espera</h4>
-                <table class="table">
-                    <thead class="">
+                <table class="table" id="tablaListaPagos">
+                    <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Usuario</th>
-                        <th>Correo</th>
+                        <th>Cobrador</th>
+                        <th>Alumno</th>
+                        <th>Concepto</th>
+                        <th>Atraso</th>
                         <th>Fecha</th>
-                        <th>Estatus</th>
-                        <th>Acciones</th>
+                        <th>Monto</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -78,10 +75,6 @@
                     </tr>
                     </tbody>
                 </table>
-                <div class="btn-group">
-                    <a href="crearusuario"></a>
-                    <a href="<?= URL::to("usuarios/form/crear") ?>" class="btn btn-primary">Crear usuario</a>
-                </div>
             </div>
         </div>
     </div>
@@ -91,6 +84,6 @@
 <script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/lista.usuarios.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/lista.pagos.js") ?>" type="text/javascript"></script>
 </body>
 </html>

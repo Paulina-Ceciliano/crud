@@ -59,16 +59,16 @@
     <div class="contenedor-principal">
         <div class="card-forms">
             <div class="card-header">
-                <h5>Mensualidades</h5>
+                <h2>Mensualidades</h2>
             </div>
             <div class="card-body">
                 <hr/>
-                <form id="formPagos" action="usuarios/registroPagos" method="POST" autocomplete="off" >
+                <form id="formPagos" action="pagos/registroPagos" method="POST" autocomplete="off" >
                     <div class="form-group">
                         <label for="cobrador">Cobrador(*)</label>
-                        <select>
+                        <select name="cobrador" id="cobrador">
                             <option>Seleccione...</option>
-                            <option>Kevin Diaz</option>
+                            <option value="1">Kevin Diaz</option>
                             <option>Paulina Ceciliano </option>
                             <option>Karla Sandoval</option>
                             <option>Ehtan Esquivel</option>
@@ -76,15 +76,21 @@
                     </div>
                     <div class="form-group">
                         <label for="alumno">Alumno (*)</label>
-                        <input type="text" class="form-control" id="alumno" name="alumno" required="required"/>
+                        <input type="number" class="form-control" id="alumno" name="alumno" required="required"/>
                     </div>
                     <div class="form-group">
                         <label for="concepto">Concepto (*)</label>
                         <input type="text" class="form-control" id="concepto" name="concepto" required="required"/>
                     </div>
                     <div class="form-group">
+                        <label for="monto">Monto (*)</label>
+                        <input type="number" class="form-control" id="monto" name="monto" required="required"/>
+                    </div>
+                    <div class="form-group">
                         <label for="atraso">Atraso (*)</label>
-                        <select>
+                        <select name="atraso" id="atraso">
+                            <option>Seleccione...</option>
+                            <option value="1">0%</option>
                             <option>5%</option>
                             <option>10%</option>
                             <option>15%</option>
@@ -93,11 +99,7 @@
                     </div>
                     <div class="form-group">
                         <label for="monto">Monto a pagar(*)</label>
-                        <input type="number" class="form-control" id="monto" name="monto" disabled/>
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha">Fecha (*)</label>
-                        <input type="date" class="form-control" id="fecha" name="fecha" required="required"/>
+                        <input type="number" class="form-control" id="monto" name="monto"/>
                     </div>
                     <div class="form-group mt-3">
                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -109,8 +111,12 @@
 </main>
 
 <script>const toggleMenu = () => document.body.classList.toggle("open");</script>
-<script src="<?= URL::to("assets/plugins/jquery.js")?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/bootstrap/js/bootstrap.min.js")?>"  type="text/javascript"></script>
+<script src="<?= URL::to("assets/plugins/jquery.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/pagos.usuarios.js") ?>" type="text/javascript"></script>
 </body>
 </html>
 

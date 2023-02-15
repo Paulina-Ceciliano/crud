@@ -3,8 +3,6 @@
 
 <head>
     <title>IGM</title>
-    <link href="<?= URL::to("assets/css/navbar.css") ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?= URL::to("assets/css/body.css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 

@@ -3,8 +3,6 @@
 
 <head>
     <title>IGM</title>
-    <link href="<?= URL::to("assets/css/navbar.css") ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?= URL::to("assets/css/body.css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 
@@ -51,7 +49,6 @@
 </nav>
 
 <main>
-
     <div class="contenedor-principal">
         <div class="card mt-5">
             <div class="card-header">
@@ -65,7 +62,6 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Usuario</th>
                         <th>Correo</th>
                         <th>Fecha</th>
                         <th>Estatus</th>

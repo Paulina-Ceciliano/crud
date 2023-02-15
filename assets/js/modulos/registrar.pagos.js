@@ -1,12 +1,15 @@
 var vista = {
     controles: {
-        formPagos: $('#formPagos'),
+        formPagos: $('#formPagos'), //objeto JQuery
+        btnBuscarAlumno: $('#buscarAlumno'),
+        inputAlumno: $('#iptBuscar'),
     },
     init: function () {
         vista.eventos();
     },
     eventos: function () {
         vista.controles.formPagos.on('submit', vista.callbacks.eventos.accionesFormRegistro.ejecutar);
+        vista.controles.btnBuscarAlumno.on('click', vista.callbacks.eventos.accionesBotonBuscar.ejecutar);
     },
     callbacks: {
         eventos: {
@@ -17,6 +20,12 @@ var vista = {
                     var obj = form.getFormData();
                     console.log(obj);
                     vista.peticiones.registrarPago(obj);
+                }
+            },
+            accionesBotonBuscar: {
+                ejecutar: function (evento){
+                    __app.detenerEvento(evento);
+
                 }
             }
         },
@@ -47,14 +56,14 @@ var vista = {
                 .error(vista.callbacks.peticiones.finalizado)
                 .send();
         },
-        //buscarAlumno: function (obj){
-            //__app.post(RUTAS_API.PAGOS.REGISTRAR_PAGO, obj)
-                //.beforeSend(vista.callbacks.peticiones.beforeSend)
-                //.complete(vista.callbacks.peticiones.completo)
-                //.success(vista.callbacks.peticiones.finalizado)
-                //.error(vista.callbacks.peticiones.finalizado)
-                //.send();
-        //}
+        buscarAlumno: function (obj){
+            __app.post(RUTAS_API.PAGOS.REGISTRAR_PAGO, obj)
+                .beforeSend(vista.callbacks.peticiones.beforeSend)
+                .complete(vista.callbacks.peticiones.completo)
+                .success(vista.callbacks.peticiones.finalizado)
+                .error(vista.callbacks.peticiones.finalizado)
+                .send();
+        }
     }
 };
 $(vista.init);

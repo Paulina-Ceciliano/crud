@@ -76,8 +76,6 @@ class Crud {
         return $this;
     }
 
-    //función con LIKE
-
     public function orWhere($llave, $condicion, $valor) {
         $this->wheres .= (strpos($this->wheres, "WHERE")) ? " OR " : " WHERE ";
         $this->wheres .= "`$llave` $condicion " . ((is_string($valor)) ? "\"$valor\"" : $valor) . " ";

@@ -1,20 +1,20 @@
 <?php
 
-class Usuarios extends ModeloGenerico
+
+class Alumnos extends ModeloGenerico
 {
     protected $id;
+    protected $matricula;
     protected $nombre;
     protected $apellido;
     protected $correo;
     protected $password;
-    protected $fecha;
-    protected $estatus;
 
     public const ESTATUS_INACTIVO = 1;
     public const ESTATUS_ACTIVO = 2;
 
     public function __construct($propiedades = null) {
-        parent::__construct("usuarios", Usuarios::class, $propiedades);
+        parent::__construct("alumnos", Alumnos::class, $propiedades);
     }
 
     /**
@@ -100,35 +100,18 @@ class Usuarios extends ModeloGenerico
     /**
      * @return mixed
      */
-    public function getFecha()
+    public function getMatricula()
     {
-        return $this->fecha;
+        return $this->matricula;
     }
 
     /**
-     * @param mixed $fecha
+     * @param mixed $matricula
      */
-    public function setFecha($fecha): void
+    public function setMatricula($matricula): void
     {
-        $this->fecha = $fecha;
+        $this->matricula = $matricula;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getEstatus()
-    {
-        return $this->estatus;
-    }
-
-    /**
-     * @param mixed $estatus
-     */
-    public function setEstatus($estatus): void
-    {
-        $this->estatus = $estatus;
-    }
-
 
 
 }

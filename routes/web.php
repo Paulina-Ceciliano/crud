@@ -18,3 +18,4 @@ Route::post("/usuarios/login", ControladorUsuarios::class."@login");
 
 //RECURSOS Usuarios (administrativos)
 Route::post("/pagos/registrarPagos",ControladorPagos::class."@insertarPago");
+Route::post("alumnos/buscar_alumnos",ControladorAlumnos::class."@buscarAlumnos");

@@ -17,6 +17,7 @@ class ControladorPagos extends Controller
     {
         $pagoModelo = new Pagos();
         $request->__set('fecha', date('YYYY-MM-DD'));
+        $request->__set('cobrador', 1);
 
         $id = $pagoModelo->insert($request->all());
         $v = ($id > 0);

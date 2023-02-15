@@ -8,10 +8,15 @@ class ControladorAlumnos extends Controller
         parent::__construct();
     }
 
-    public function buscarUsuarioPorId($idUsuario) {
-        $usuarioModel = new Usuarios();
-        $usuario = $usuarioModel->where("id", " = ", $idUsuario)->first();
-        $v = ($usuario != null);
-        return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
+    public function buscarAlumno(Request $request) {
+        $alumnoModel = new Alumnos();
+        $alumnos = $alumnoModel->orWhere("matricula", " LIKE% ", $request->alumno)
+            ->orWhere("nombre", " LIKE% ", $request->alumno)
+            ->orWhere("apellido", " LIKE% ", $request->alumno)
+            ->orWhere("correo", " LIKE% ", $request->alumno)->get();
+        $v = count($alumnos);
+        $respuesta = new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
+        $respuesta->setDatos($alumnos);
+        return $respuesta;
     }
 }

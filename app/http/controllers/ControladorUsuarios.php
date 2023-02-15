@@ -57,9 +57,8 @@ class ControladorUsuarios extends Controller
         }
 
         //Esto se hace para añadir campos al request
-        $request->__set('fecha', date('d-m-Y'));
-        $request->__set('estatus', 'Inactivo');
-        $request->__set('idRol', 2);
+        $request->__set('fecha', date('YYYY-MM-DD'));
+        $request->__set('estatus', $usuarioModel::ESTATUS_INACTIVO);
 
         //Encriptar contraseña
         $request->password = md5($request->password);
@@ -112,10 +111,4 @@ class ControladorUsuarios extends Controller
         $v = ($usuario != null);
         return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
-
-    /*public function enviarCorreo($destinatario, $asunto, $mensaje) {
-        $headers = "From: gibbymetal@hotmail.com";
-        mail($destinatario, $asunto, $mensaje, $headers);
-    }*/
-
 }

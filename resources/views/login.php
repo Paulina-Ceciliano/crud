@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>Instituto Gnóstico de México</title>
-    <link href="<?= URL::to("assets/css/") ?>" rel="stylesheet" type="text/css"/>
     <link href="<?= URL::to("assets/plugins/sweetalert/sweetalert.css")?>" rel="stylesheet" type="text/css"/>
 </head>
 <body  data-urlbase=" <?= URL::base()?>">

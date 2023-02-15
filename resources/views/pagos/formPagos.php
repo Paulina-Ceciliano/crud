@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGM</title>
-    <link href="<?= URL::to("assets/css/navbar.css") ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?= URL::to("assets/css/body.css") ?>" rel="stylesheet" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
@@ -62,21 +60,19 @@
                 <h2>Mensualidades</h2>
             </div>
             <div class="card-body">
+                <form id="formAlumno" action="buscarlumnos">
+                    <div class="form-group">
+                        <label for="alumno">Alumno (*)</label>
+                        <input type="text" name="iptBuscar" id="iptBuscar"/>
+                        <button class="btnBuscar" id="buscarAlumno">Buscar</button>
+                    </div>
+                </form>
                 <hr/>
                 <form id="formPagos" action="pagos/registroPagos" method="POST" autocomplete="off" >
                     <div class="form-group">
-                        <label for="cobrador">Cobrador(*)</label>
-                        <select name="cobrador" id="cobrador">
-                            <option>Seleccione...</option>
-                            <option value="1">Kevin Diaz</option>
-                            <option>Paulina Ceciliano </option>
-                            <option>Karla Sandoval</option>
-                            <option>Ehtan Esquivel</option>
+                        <select name="alumno" id="alumno">
+                            <option>...</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="alumno">Alumno (*)</label>
-                        <input type="number" class="form-control" id="alumno" name="alumno" required="required"/>
                     </div>
                     <div class="form-group">
                         <label for="concepto">Concepto (*)</label>
@@ -116,7 +112,7 @@
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/pagos.usuarios.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/registrar.pagos.js") ?>" type="text/javascript"></script>
 </body>
 </html>
 

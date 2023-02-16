@@ -7,16 +7,18 @@
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 <div class="container">
-    <div class= "card mx-auto mt-5" style="width: 500px">
-        <div class="card-header">
-            <h5>Solicitud de registro</h5>
+    <div>
+        <div>
+            <h2>Solicitud de registro</h2>
         </div>
-        <div class="card-body">
-            <div class="btn-group ">
-                <a href="<?= URL::base() ?>" >Inicio de sesión</a>
+        <div>
+            <div>
+                <p>
+                    ¿Ya tienes una cuenta? Inicia sesión <a href="<?= URL::base() ?>" >Aquí</a>
+                </p>
             </div>
             <hr/>
-            <h4 class="card-title mb-4"><?= isset($titulo) ? $titulo : "" ?> </h4>
+            <h3>Datos: </h3>
             <form id="formUsuario" action="usuarios/registrar" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre(s)(*)</label>
@@ -27,10 +29,6 @@
                     <input type="text" class="form-control" id="apellido" name="apellido" required="required"/>
                 </div>
                 <div class="form-group">
-                    <label for="username">Usuario(*)</label>
-                    <input type="text" class="form-control" id="username" name="username" required="required"/>
-                </div>
-                <div class="form-group">
                     <label for="correo">Correo(*)</label>
                     <input type="email" class="form-control" id="correo" name="correo" required="required"/>
                 </div>
@@ -39,7 +37,7 @@
                     <input type="password" class="form-control" id="password" name="password" required="required"/>
                 </div>
                 <div class="form-group mt-3">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit">Enviar Solicitud</button>
                 </div>
             </form>
         </div>

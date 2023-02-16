@@ -43,7 +43,6 @@ class ModeloGenerico extends Crud {
                 }
                 return $objetoFinal;
             }
-
             //Corregir el objeto que recibimos con los atributos del modelo.
             foreach ($atributos as $indice => $llave) {
                 if (isset($obj[$llave])) {

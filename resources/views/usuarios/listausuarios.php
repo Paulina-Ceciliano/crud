@@ -1,63 +1,26 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>IGM</title>
 </head>
+<style>
+    .table {
+        border: #0d0d0e 1px;
+        border-collapse: collapse;
+    }
+</style>
 <body data-urlbase="<?= URL::base() ?>">
-
-<nav class="navbar">
-    <button onclick="toggleMenu()" class="burger"></button>
-    <a href="<?= URL::to("/usuarios/home") ?>">
-        <button class="button">Inicio</button>
-    </a>
-    <div class="dropdowns">
-        <div class="dropdown">
-            <button class="button">
-                Pagos
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Inscripciones</button>
-                <button>Reinscripciones</button>
-                <button>Mensualidades</button>
-                <button>Productos</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Calificaciones
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Examenes</button>
-                <button>Finales</button>
-                <button>Parciales</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Reportes
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Reporte gráfico</button>
-                <button>Reporte en Tablas</button>
-            </div>
-        </div>
-    </div>
-</nav>
 
 <main>
     <div class="contenedor-principal">
-        <div class="card mt-5">
-            <div class="card-header">
-                <h5>Solicitudes</h5>
+        <div>
+            <div>
+                <h1>Solicitudes</h1>
             </div>
-            <div class="card-body mt-5">
+            <div>
                 <hr/>
-                <h4 class="card-title mb-4"> Lista de usuarios en espera</h4>
-                <table class="table">
+                <h2> Lista de usuarios en espera</h2>
+                <table class="table" id="tablaListaUsuarios">
                     <thead class="">
                     <tr>
                         <th>Nombre</th>

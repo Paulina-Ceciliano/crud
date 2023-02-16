@@ -6,48 +6,6 @@
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 
-<nav class="navbar">
-    <button onclick="toggleMenu()" class="burger"></button>
-    <a href="<?= URL::to("/usuarios/home") ?>">
-        <button class="button">Inicio</button>
-    </a>
-    <div class="dropdowns">
-        <div class="dropdown">
-            <button class="button">
-                Pagos
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Inscripciones</button>
-                <button>Reinscripciones</button>
-                <button>Mensualidades</button>
-                <button>Productos</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Calificaciones
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Examenes</button>
-                <button>Finales</button>
-                <button>Parciales</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Reportes
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Reporte gráfico</button>
-                <button>Reporte en Tablas</button>
-            </div>
-        </div>
-    </div>
-</nav>
-
 <main>
     <div class="contenedor-principal">
         <div class="card mt-5">

@@ -1,7 +1,6 @@
 <?php
 
 class Conexion {
-
     private $conexion;
     private $configuracion = [
         "driver" => "mysql",
@@ -28,7 +27,7 @@ class Conexion {
             $CODIFICACION = $this->configuracion["charset"];
 
             $url = "{$CONTROLADOR}:host={$SERVIDOR}:{$PUERTO};"
-                    . "dbname={$BASE_DATOS};charset={$CODIFICACION}";
+                . "dbname={$BASE_DATOS};charset={$CODIFICACION}";
             //Se crea la conexión.
             $this->conexion = new PDO($url, $USUARIO, $CLAVE);
             return $this->conexion;

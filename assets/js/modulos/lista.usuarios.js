@@ -26,6 +26,11 @@ var vista = {
                         tbody.html('');
                         for (var i = 0; i < datos.length; i++) {
                             var dato = datos[i];
+                            if(dato['estatus']== 1){
+                                dato['estatus']='Inactivo';
+                            }else if(dato['estatus']== 2){
+                                dato['estatus']='Activo';
+                            }
                             tbody.append(vista.utils.templates.item(dato));
                         }
                     } else {
@@ -54,7 +59,7 @@ var vista = {
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
                     +'<td>'
-                    +'<a href="javascript:;" class="btn-accion editar">Editar</a>'
+                    + '<a href="' + __app.urlTo('/usuarios/actualizarEstatus/' + btoa(obj.id)) + '" class="btn-accion activar">Activar</a>'
                     +' | '
                     +'<a href="javascript:;" class="btn-accion eliminar">Eliminar</a>'
                     +'<td>'

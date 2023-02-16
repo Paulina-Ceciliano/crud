@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="rutas y vistas actualizadas">
-      <change afterPath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.pagos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/conexion/Conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/conexion/Conexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/constantes/EMensajes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/constantes/EMensajes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorPagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorPagos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/persistencia/Crud.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/Crud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/persistencia/modelos/Usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/modelos/Usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistencia/modelos/ModeloGenerico.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/modelos/ModeloGenerico.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modulos/pagos.usuarios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/registrar.pagos.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.pagos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svg/chevron.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svg/close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svg/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/calificaciones/formCalificaciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calificaciones/formCalificaciones.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pagos/listapagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/listapagos.php" afterDir="false" />
@@ -22,6 +27,8 @@
       <change beforePath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/usuarios/registrarusuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/registrarusuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bin/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Route.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +135,8 @@
       <workItem from="1676302686799" duration="152000" />
       <workItem from="1676302871529" duration="17019000" />
       <workItem from="1676387979374" duration="10883000" />
-      <workItem from="1676474147219" duration="15426000" />
+      <workItem from="1676474147219" duration="15501000" />
+      <workItem from="1676562410246" duration="22692000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -200,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676410286254</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="buscar alumnos">
+      <created>1676504611914</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676504611914</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +243,8 @@
     <MESSAGE value="rutas y vistas actualizadas" />
     <MESSAGE value="formulario pago de mensualidad (vista) modelo y controlador" />
     <MESSAGE value="controlador de pagos" />
-    <option name="LAST_COMMIT_MESSAGE" value="controlador de pagos" />
+    <MESSAGE value="buscar alumnos" />
+    <option name="LAST_COMMIT_MESSAGE" value="buscar alumnos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

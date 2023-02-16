@@ -17,29 +17,25 @@ class ControladorUsuarios extends Controller
         return $this->view("usuarios/home");
     }
 
-    public function lista()
+    public function listaVista()
     {
         return $this->view("usuarios/listausuarios");
     }
 
     public function formCrearUsuario()
     {
-        return $this->view("registrarusuario");
+        return $this->view("usuarios/registrarusuario");
     }
 
     public function formEdicionUsuario()
     {
-        $variables = [
-            'titulo' => 'Actualizar información'
-        ];
-        return $this->view("usuarios/registrarusuario", $variables);
+
     }
 
     public function login(Request $request) {
         $usuarioModel = new Usuarios();
         $usuario = $usuarioModel->where("correo", "=", $request->correo)
-            ->where("password", "=", md5($request->password))
-            ->first();
+            ->where("password", "=", md5($request->password))->first();
 
         if ($usuario) {
             return new Respuesta(EMensajes::CORRECTO, "Se hace login");
@@ -50,16 +46,13 @@ class ControladorUsuarios extends Controller
 
     public function insertarUsuario(Request $request) {
         $usuarioModel = new Usuarios();
-        $usuario = $usuarioModel->where("correo", "=", $request->correo)
-            ->orWhere("username", "=", $request->username)->first();
+        $usuario = $usuarioModel->where("correo", "=", $request->correo)->first();
         if ($usuario) {
             return new Respuesta(EMensajes::ERROR, "El correo o nombre de usuario ya se encuentran registrados.");
         }
-
         //Esto se hace para añadir campos al request
         $request->__set('fecha', date('YYYY-MM-DD'));
         $request->__set('estatus', $usuarioModel::ESTATUS_INACTIVO);
-
         //Encriptar contraseña
         $request->password = md5($request->password);
 
@@ -75,7 +68,8 @@ class ControladorUsuarios extends Controller
 
     public function listarUsuarios() {
         $usuarioModel = new Usuarios();
-        $lista = $usuarioModel->get();
+        $lista = $usuarioModel->where('estatus','=',1)->get();
+
         $v = count($lista);
         $respuesta = new Respuesta($v ? EMensajes::CORRECTO : EMensajes::ERROR);
         $respuesta->setDatos($lista);
@@ -104,11 +98,21 @@ class ControladorUsuarios extends Controller
         return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
 
-    public function buscarUsuarioPorCadena($idUsuario) {
+    public function activarUsuario($id){
+        $idUsuario = base64_decode($id);
         $usuarioModel = new Usuarios();
-        //Se debe realizar una búsqueda con la sentencia LIKE de SQL
         $usuario = $usuarioModel->where("id", " = ", $idUsuario)->first();
-        $v = ($usuario != null);
-        return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
+        $usuarioArray = [
+            'id'=>$usuario->id,
+            'nombre'=>$usuario->nombre,
+            'apellido'=>$usuario->apellido,
+            'correo'=>$usuario->correo,
+            'password'=>$usuario->password,
+            'fecha'=>$usuario->fecha,
+            'estatus'=>2
+        ];
+        $usuarioActualizado=$usuarioModel->update($usuarioArray);
+        $v = ($usuarioActualizado > 0);
+        return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
     }
 }

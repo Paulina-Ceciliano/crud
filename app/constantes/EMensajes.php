@@ -37,5 +37,4 @@ class EMensajes {
                 return new Respuesta(-1, "Error al conectar con la base de datos.");
         }
     }
-
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGM</title>
-    <link href="<?= URL::to("assets/css/navbar.css") ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?= URL::to("assets/css/sidebar.css") ?>" rel="stylesheet" type="text/css"/>
     <link href="<?= URL::to("assets/css/body.css") ?>" rel="stylesheet" type="text/css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,47 +13,6 @@
           rel="stylesheet">
 </head>
 <body data-urlbase="<?= URL::base() ?>">
-<nav class="navbar">
-    <button onclick="toggleMenu()" class="burger"></button>
-    <a href="<?= URL::to("/usuarios/home") ?>">
-        <button class="button">Inicio</button>
-    </a>
-    <div class="dropdowns">
-        <div class="dropdown">
-            <button class="button">
-                Pagos
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Inscripciones</button>
-                <button>Reinscripciones</button>
-                <button>Mensualidades</button>
-                <button>Productos</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Calificaciones
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Examenes</button>
-                <button>Finales</button>
-                <button>Parciales</button>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="button">
-                Reportes
-                <img src="<?= URL::to("assets/svg/chevron.svg") ?>" />
-            </button>
-            <div class="dropdown-menu">
-                <button>Reporte gráfico</button>
-                <button>Reporte en Tablas</button>
-            </div>
-        </div>
-    </div>
-</nav>
 
 <main>
     <div class="contenedor-principal">

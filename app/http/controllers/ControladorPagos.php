@@ -61,8 +61,4 @@ class ControladorPagos extends Controller
     public function buscarPago($idPago)
     {
     }
-
-    public function buscarAlumno()
-    {
-    }
 }

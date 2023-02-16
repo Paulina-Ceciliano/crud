@@ -1,7 +1,8 @@
 var RUTAS_API = {
+    //endpoint del ruteo web
     USUARIOS: {
-        LISTAR: 'listar_usuarios',
-        REGISTRAR_USUARIO: 'usuarios/registrar',
+        LISTAR: 'usuarios/listar',
+        REGISTRAR_USUARIO: 'usuarios/form/crear',
         LOGIN: 'usuarios/login',
         HOME: 'usuarios/home',
     },

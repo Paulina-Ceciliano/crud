@@ -1,6 +1,7 @@
 var vista = {
     controles: {
-        formPagos: $('#formPagos'), //objeto JQuery
+        //objetos JQuery
+        formPagos: $('#formPagos'),
         btnBuscarAlumno: $('#buscarAlumno'),
         inputAlumno: $('#iptBuscar'),
     },
@@ -26,6 +27,15 @@ var vista = {
                 ejecutar: function (evento){
                     __app.detenerEvento(evento);
 
+                }
+            },
+            accionesInputBuscar: {
+                ejecutar: function (evento){
+                    __app.detenerEvento(evento);
+                    var input = vista.controles.inputAlumno;
+                    var obj = input.getFormData();
+                    console.log(obj)
+                    vista.peticiones.buscarAlumno(obj)
                 }
             }
         },

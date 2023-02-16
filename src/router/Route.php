@@ -54,7 +54,7 @@ class Route {
 
         //Muestra el mensaje de error 404...
         header("Content-Type: text/html");
-        echo 'La uri (<a href="' . $uri . '">' . $uri . '</a>) no se encuentra regiostrada en el método ' . $method . '.';
+        echo 'La uri (<a href="' . $uri . '">' . $uri . '</a>) no se encuentra registrada en el método ' . $method . '.';
     }
 
 }

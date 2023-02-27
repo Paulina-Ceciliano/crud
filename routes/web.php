@@ -13,5 +13,5 @@ Route::get("/pagos/listaPagos",ControladorPagos::class."@listarPagosVista");
 Route::post("/usuarios/form/crear", ControladorUsuarios::class."@insertarUsuario");
 Route::post("/usuarios/login", ControladorUsuarios::class."@login");
 Route::post("/pagos/registrarPagos",ControladorPagos::class."@insertarPago");
-Route::post("alumnos/buscar_alumnos",ControladorAlumnos::class."@buscarAlumnos");
+Route::post("/alumnos/buscar_alumnos",ControladorAlumnos::class."@buscarAlumnos");
 Route::get("/usuarios/actualizarEstatus/:id", ControladorUsuarios::class."@activarUsuario");

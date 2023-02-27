@@ -1,5 +1,4 @@
 <?php
-
 require './src/Roots.php';
 require PATH_SRC . 'autoloader/Autoloader.php';
 
@@ -13,5 +12,4 @@ foreach ($rutas as $archivo) {
         require $rutaArchivo;
     }
 }
-
 Route::submit();

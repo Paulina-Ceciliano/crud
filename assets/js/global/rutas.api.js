@@ -8,5 +8,9 @@ var RUTAS_API = {
     },
     PAGOS:{
         REGISTRAR_PAGO: 'pagos/registrarPagos'
+    },
+
+    ALUMNOS:{
+        BUSCAR: '/alumnos/buscar_alumnos'
     }
 };

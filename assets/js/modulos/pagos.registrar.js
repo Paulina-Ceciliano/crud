@@ -2,15 +2,12 @@ var vista = {
     controles: {
         //objetos JQuery
         formPagos: $('#formPagos'),
-        btnBuscarAlumno: $('#buscarAlumno'),
-        inputAlumno: $('#iptBuscar'),
     },
     init: function () {
         vista.eventos();
     },
     eventos: function () {
         vista.controles.formPagos.on('submit', vista.callbacks.eventos.accionesFormRegistro.ejecutar);
-        vista.controles.btnBuscarAlumno.on('click', vista.callbacks.eventos.accionesBotonBuscar.ejecutar);
     },
     callbacks: {
         eventos: {
@@ -23,21 +20,6 @@ var vista = {
                     vista.peticiones.registrarPago(obj);
                 }
             },
-            accionesBotonBuscar: {
-                ejecutar: function (evento){
-                    __app.detenerEvento(evento);
-
-                }
-            },
-            accionesInputBuscar: {
-                ejecutar: function (evento){
-                    __app.detenerEvento(evento);
-                    var input = vista.controles.inputAlumno;
-                    var obj = input.getFormData();
-                    console.log(obj)
-                    vista.peticiones.buscarAlumno(obj)
-                }
-            }
         },
         peticiones: {
             beforeSend: function () {
@@ -53,7 +35,7 @@ var vista = {
                     swal('Correcto', 'Se ha registrado correctamente el usuario', 'success');
                     return;
                 }
-                swal('Error', respuesta.mensaje, 'error');
+                swal('Error', respuesta.mensaje, 'Error al registrar');
             }
         }
     },
@@ -66,14 +48,6 @@ var vista = {
                 .error(vista.callbacks.peticiones.finalizado)
                 .send();
         },
-        buscarAlumno: function (obj){
-            __app.post(RUTAS_API.PAGOS.REGISTRAR_PAGO, obj)
-                .beforeSend(vista.callbacks.peticiones.beforeSend)
-                .complete(vista.callbacks.peticiones.completo)
-                .success(vista.callbacks.peticiones.finalizado)
-                .error(vista.callbacks.peticiones.finalizado)
-                .send();
-        }
     }
 };
 $(vista.init);

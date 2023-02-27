@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
           rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body data-urlbase="<?= URL::base() ?>">
 
@@ -18,20 +19,11 @@
             <div class="card-header">
                 <h2>Mensualidades</h2>
             </div>
-            <div class="card-body">
-                <form id="formAlumno" action="buscarlumnos">
-                    <div class="form-group">
-                        <label for="alumno">Alumno (*)</label>
-                        <input type="text" name="iptBuscar" id="iptBuscar"/>
-                        <button class="btnBuscar" id="buscarAlumno">Buscar</button>
-                    </div>
-                </form>
+            <div>
                 <hr/>
                 <form id="formPagos" action="pagos/registroPagos" method="POST" autocomplete="off" >
                     <div class="form-group">
-                        <select name="alumno" id="alumno">
-
-                        </select>
+                        <select class="js-example-basic-single" id="buscarAlumno" name="buscarAlumno[]"></select>
                     </div>
                     <div class="form-group">
                         <label for="concepto">Concepto (*)</label>
@@ -67,11 +59,13 @@
 
 <script>const toggleMenu = () => document.body.classList.toggle("open");</script>
 <script src="<?= URL::to("assets/plugins/jquery.js") ?>" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/registrar.pagos.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/pagos.registrar.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/alumnos.buscar.js") ?>" type="text/javascript"></script>
 </body>
 </html>
 

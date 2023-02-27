@@ -128,7 +128,4 @@ class Usuarios extends ModeloGenerico
     {
         $this->estatus = $estatus;
     }
-
-
-
 }

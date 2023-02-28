@@ -12,12 +12,29 @@ var vista = {
         eventos: {
             accionesBotonActivar: {
                 ejecutar: function (element){
-                    var id = element.dataset.userid;
-                    var obj = {
-                        id: id,
-                    };
-                    vista.peticiones.activarUsuario(obj);
-                    console.log("el id es: "+ id);
+                    Swal.fire({
+                        title: '¿Desea activar este usuario?',
+                        text: "Al activar la cuenta el usuario tendrá acceso al sistema",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Activar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            /*Swal.fire(
+                                'Activado',
+                                'Se ha activado el usuario',
+                                'success'
+                            )*/
+                            var id = element.dataset.userid;
+                            var obj = {
+                                id: id,
+                            };
+                            vista.peticiones.activarUsuario(obj);
+                            vista.peticiones.listarUsuarios();
+                        }
+                    })
                 }
             }
         },
@@ -57,10 +74,14 @@ var vista = {
                 },
                 finalizado: function (respuesta) {
                     if (__app.validarRespuesta(respuesta)) {
-                        swal('Correcto', 'Se ha activado correctamente el usuario', 'success');
+                        Swal.fire('Usuario Activado',
+                            'Se ha activado correctamente el usuario',
+                            'success');
                         return;
                     }
-                    swal('Error', respuesta.mensaje, 'error');
+                    Swal.fire('Error',
+                        respuesta.mensaje,
+                        'error');
                 }
             }
         }
@@ -92,7 +113,6 @@ var vista = {
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
                     +'<td>'
-                    //+ '<a href="' + __app.urlTo('/usuarios/actualizarEstatus/' + btoa(obj.id)) + '" class="btn-accion activar">Activar</a>'
                     +'<button class="activar" data-userid="'+btoa(obj.id)+'" onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)" >Activar</button>'
                     +' | '
                     +'<a href="javascript:;" class="btn-accion eliminar">Eliminar</a>'

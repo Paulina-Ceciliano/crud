@@ -19,17 +19,18 @@ var vista = {
                 }
             }
         },
-        peticiones:{
+        peticiones:{//Petición de las vistas a los controladores
             beforeSend: function(){
+                //Desabilita los inputs y los botones
                 vista.controles.formLogin.find('input,button').prop('disabled', true);
             },
             completo: function (){
                 vista.controles.formLogin.find('input,button').prop('disabled', false);
             },
-            finalizado: function (respuesta){
+            finalizado: function (respuesta){//respuesta del controlador
                 if(__app.validarRespuesta(respuesta)){
-                    vista.controles.formLogin.find('input').val('');
-                    window.location.href = __app.urlTo("usuarios/home");
+                    vista.controles.formLogin.find('input').val('');//limpiar los inputs
+                    window.location.href = __app.urlTo("usuarios/home");//Funciones de JS
                     return;
                 }
                 swal('Error', respuesta.mensaje,'error');

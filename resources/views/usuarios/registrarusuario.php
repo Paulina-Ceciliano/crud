@@ -6,6 +6,11 @@
     <link href="<?= URL::to("assets/plugins/sweetalert/sweetalert.css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <body data-urlbase="<?= URL::base() ?>">
+<nav>
+    <ul>
+        <li><a href="<?= URL::base() ?>">Iniciar sesión</a></li>
+    </ul>
+</nav>
 <div class="container">
     <div>
         <div>

@@ -13,7 +13,14 @@
           rel="stylesheet">
 </head>
 <body data-urlbase="<?= URL::base() ?>">
-
+<nav>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Pagos</a></li>
+        <li><a href="#">Calificaciones</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+    </ul>
+</nav>
 <main>
     <div class="contenedor-principal">
         <div class="card-forms">

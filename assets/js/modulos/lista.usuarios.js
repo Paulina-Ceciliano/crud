@@ -1,17 +1,25 @@
 var vista = {
     controles: {
-        tbodyListaUsuarios: $('#tablaListaUsuarios tbody')
+        tbodyListaUsuarios: $('#tablaListaUsuarios tbody'),
+        botonActivar : null
     },
     init: function () {
-        vista.eventos();
         vista.peticiones.listarUsuarios();
     },
     eventos: function () {
-
     },
     callbacks: {
         eventos: {
-
+            accionesBotonActivar: {
+                ejecutar: function (element){
+                    var id = element.dataset.userid;
+                    var obj = {
+                        id: id,
+                    };
+                    vista.peticiones.activarUsuario(obj);
+                    console.log("el id es: "+ id);
+                }
+            }
         },
         peticiones: {
             listarUsuarios: {
@@ -36,6 +44,23 @@ var vista = {
                     } else {
                         tbody.html(vista.utils.templates.noHayRegistros());
                     }
+                    vista.controles.botonActivar = $('.activar');
+                }
+            },
+            activarUsuario:{
+                beforeSend: function () {
+                    vista.controles.botonActivar.prop('disabled', true);
+                    //propiedades botón
+                },
+                completo: function () {
+                    vista.controles.botonActivar.prop('disabled', false);
+                },
+                finalizado: function (respuesta) {
+                    if (__app.validarRespuesta(respuesta)) {
+                        swal('Correcto', 'Se ha activado correctamente el usuario', 'success');
+                        return;
+                    }
+                    swal('Error', respuesta.mensaje, 'error');
                 }
             }
         }
@@ -46,6 +71,14 @@ var vista = {
                 .beforeSend(vista.callbacks.peticiones.listarUsuarios.beforeSend)
                 .success(vista.callbacks.peticiones.listarUsuarios.completo)
                 .error(vista.callbacks.peticiones.listarUsuarios.completo)
+                .send();
+        },
+        activarUsuario: function (obj){
+            __app.post(RUTAS_API.USUARIOS.ACTIVAR,obj)
+                .beforeSend(vista.callbacks.peticiones.activarUsuario.beforeSend)
+                .complete(vista.callbacks.peticiones.activarUsuario.completo)
+                .success(vista.callbacks.peticiones.activarUsuario.finalizado)
+                .error(vista.callbacks.peticiones.activarUsuario.finalizado)
                 .send();
         }
     },
@@ -59,7 +92,8 @@ var vista = {
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
                     +'<td>'
-                    + '<a href="' + __app.urlTo('/usuarios/actualizarEstatus/' + btoa(obj.id)) + '" class="btn-accion activar">Activar</a>'
+                    //+ '<a href="' + __app.urlTo('/usuarios/actualizarEstatus/' + btoa(obj.id)) + '" class="btn-accion activar">Activar</a>'
+                    +'<button class="activar" data-userid="'+btoa(obj.id)+'" onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)" >Activar</button>'
                     +' | '
                     +'<a href="javascript:;" class="btn-accion eliminar">Eliminar</a>'
                     +'<td>'

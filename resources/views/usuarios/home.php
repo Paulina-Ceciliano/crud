@@ -11,7 +11,16 @@
           rel="stylesheet">
 </head>
 <body data-urlbase="<?= URL::base() ?>">
-<header></header>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Pagos</a></li>
+            <li><a href="#">Calificaciones</a></li>
+            <li><a href="#">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+</header>
 <main>
     <div class="contenedor-principal">
         Este es el home de los administradores

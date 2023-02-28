@@ -120,14 +120,21 @@ class ControladorUsuarios extends Controller
         return new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
     }
 
-    public function activarUsuario($id){
-        $idUsuario = base64_decode($id);
+    public function activarUsuario(Request $request){
+        $idUsuario = base64_decode($request->id);
         $usuarioModel = new Usuarios();
         $usuario = $usuarioModel->where("id", " = ", $idUsuario)->first();
-        $usuario->estatus = 2;
-        $usuarioActualizado = $usuario->update();
+        $usuarioArray = [
+            'id'=>$usuario->id,
+            'nombre'=>$usuario->nombre,
+            'apellido'=>$usuario->apellido,
+            'correo'=>$usuario->correo,
+            'password'=>$usuario->password,
+            'fecha'=>$usuario->fecha,
+            'estatus'=>2
+        ];
+        $usuarioActualizado = $usuarioModel->update($usuarioArray);
         $v = ($usuarioActualizado > 0);
         return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
     }
-
 }

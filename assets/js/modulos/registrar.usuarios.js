@@ -15,7 +15,7 @@ var vista = {
                     __app.detenerEvento(evento);
                     var form = vista.controles.formUsuario;
                     var obj = form.getFormData();
-                    console.log(obj);
+                    //console.log(obj);
                     vista.peticiones.registrarUsuario(obj);
                 }
             }
@@ -29,7 +29,7 @@ var vista = {
             },
             finalizado: function (respuesta) {
                 if (__app.validarRespuesta(respuesta)) {
-                    vista.controles.formUsuario.find('input').val('');
+                    vista.controles.formUsuario.find('input').val(''); //Limpiar
                     swal('Correcto', 'Se ha registrado correctamente el usuario', 'success');
                     return;
                 }

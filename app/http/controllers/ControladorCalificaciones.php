@@ -8,9 +8,9 @@ class ControladorCalificaciones extends Controller
         parent::__construct();
     }
 
-    public function index()
+    public function registroVista()
     {
-        return $this->view("usuarios/formCalificaciones");
+        return $this->view("calificaciones/form/registro");
     }
 
     public function insert()

@@ -5,6 +5,7 @@ var RUTAS_API = {
         REGISTRAR_USUARIO: 'usuarios/form/crear',
         LOGIN: 'usuarios/login',
         HOME: 'usuarios/home',
+        ACTIVAR: 'usuarios/actualizarEstatus',
     },
     PAGOS:{
         REGISTRAR_PAGO: 'pagos/registrarPagos'

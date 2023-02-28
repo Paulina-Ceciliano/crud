@@ -12,7 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body data-urlbase="<?= URL::base() ?>">
-
+<nav>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Pagos</a></li>
+        <li><a href="#">Calificaciones</a></li>
+        <li><a href="#">Cerrar sesión</a></li>
+    </ul>
+</nav>
 <main>
     <div class="contenedor-principal">
         <div class="card-forms">

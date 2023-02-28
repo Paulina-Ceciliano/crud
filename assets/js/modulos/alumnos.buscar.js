@@ -12,9 +12,7 @@ var vista = {
 
     },
     callbacks:{
-        eventos:{
-
-        },
+        eventos:{ },
         peticiones:{
             beforeSend: function (){
                 var select= vista.controles.selectBuscar;
@@ -52,10 +50,10 @@ var vista = {
                     ' '+obj.apellido+'</option>'
             },
             consultando: function(){
-                return '<option value="">Consultando</option>'
+                return '<option>Consultando</option>'
             },
             noHayRegistros: function(){
-                return '<option value="">No hay registros</option>'
+                return '<option>No hay registros</option>'
             }
         }
     }

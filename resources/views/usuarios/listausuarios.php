@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>IGM</title>
+    <link href="<?= URL::to("assets/plugins/sweetalert/sweetalert.css") ?>" rel="stylesheet" type="text/css"/>
 </head>
 <style>
     .table {
@@ -10,7 +11,14 @@
     }
 </style>
 <body data-urlbase="<?= URL::base() ?>">
-
+<nav>
+    <ul>
+        <li><a href="<?= URL::to("usuarios/home") ?>">Inicio</a></li>
+        <li><a href="<?= URL::to("pagos/form/pagos") ?>">Pagos</a></li>
+        <li><a href="<?= URL::to("") ?>"">Calificaciones</a></li>
+        <li><a href="<?= URL::to("cerrarSesion") ?>"">Cerrar sesión</a></li>
+    </ul>
+</nav>
 <main>
     <div class="contenedor-principal">
         <div>
@@ -50,6 +58,7 @@
 <script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/modulos/lista.usuarios.js") ?>" type="text/javascript"></script>
 </body>
 </html>

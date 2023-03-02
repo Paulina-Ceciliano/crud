@@ -30,7 +30,7 @@ var vista = {
             finalizado: function (respuesta) {
                 if (__app.validarRespuesta(respuesta)) {
                     vista.controles.formUsuario.find('input').val(''); //Limpiar
-                    swal('Correcto', 'Se ha registrado correctamente el usuario', 'success');
+                    swal('Correcto', 'Se ha enviado correctamente el registro', 'success');
                     return;
                 }
                 swal('Error', respuesta.mensaje, 'error');

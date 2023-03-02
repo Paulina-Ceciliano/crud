@@ -9,6 +9,7 @@ class Alumnos extends ModeloGenerico
     protected $apellido;
     protected $correo;
     protected $password;
+    protected $promocion;
 
     public const ESTATUS_INACTIVO = 1;
     public const ESTATUS_ACTIVO = 2;
@@ -112,6 +113,23 @@ class Alumnos extends ModeloGenerico
     {
         $this->matricula = $matricula;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPromocion()
+    {
+        return $this->promocion;
+    }
+
+    /**
+     * @param mixed $promocion
+     */
+    public function setPromocion($promocion): void
+    {
+        $this->promocion = $promocion;
+    }
+
 
 
 }

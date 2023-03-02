@@ -1,7 +1,7 @@
 var vista = {
     controles:{
         selectBuscar: $('#buscarAlumno').select2({
-            theme: "classic"
+            theme: "classic",
         })
     },
     init: function (){
@@ -35,8 +35,8 @@ var vista = {
     },
 
     peticiones:{
-        listarAlumnos: function (){
-            __app.get(RUTAS_API.ALUMNOS.BUSCAR)
+        listarAlumnos: function (obj){
+            __app.post(RUTAS_API.ALUMNOS.BUSCAR,obj)
                 .beforeSend(vista.callbacks.peticiones.beforeSend)
                 .success(vista.callbacks.peticiones.completo)
                 .error(vista.callbacks.peticiones.completo)

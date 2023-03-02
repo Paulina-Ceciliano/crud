@@ -24,20 +24,22 @@
     <div class="contenedor-principal">
         <div class="card-forms">
             <div class="card-header">
-                <h2>Mensualidades</h2>
+                Registro de Pagos
             </div>
             <div>
                 <hr/>
                 <form id="formPagos" action="pagos/registroPagos" method="POST" autocomplete="off" >
                     <div class="form-group">
-                        <select class="js-example-basic-single" id="buscarAlumno" name="buscarAlumno[]"></select>
+                        <select class="js-example-basic-single" id="buscarAlumno" name="buscarAlumno[]">
+                            <option>Buscar Alumno</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="concepto">Concepto (*)</label>
+                        <label for="concepto">Promoción (*)</label>
                         <input type="text" class="form-control" id="concepto" name="concepto" required="required"/>
                     </div>
                     <div class="form-group">
-                        <label for="monto">Monto (*)</label>
+                        <label for="monto">Fecha</label>
                         <input type="number" class="form-control" id="monto" name="monto" required="required"/>
                     </div>
                     <div class="form-group">

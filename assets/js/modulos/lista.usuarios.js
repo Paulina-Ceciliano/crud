@@ -1,13 +1,13 @@
 var vista = {
     controles: {
         tbodyListaUsuarios: $('#tablaListaUsuarios tbody'),
-        botonActivar : null
+        botonActivar : null,
+        botonEliminar: null,
     },
     init: function () {
         vista.peticiones.listarUsuarios();
     },
-    eventos: function () {
-    },
+    eventos: function () {},
     callbacks: {
         eventos: {
             accionesBotonActivar: {
@@ -18,21 +18,36 @@ var vista = {
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
+                        cancelButtonColor: '#dd3333',
                         confirmButtonText: 'Activar'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            /*Swal.fire(
-                                'Activado',
-                                'Se ha activado el usuario',
-                                'success'
-                            )*/
                             var id = element.dataset.userid;
                             var obj = {
                                 id: id,
                             };
                             vista.peticiones.activarUsuario(obj);
-                            vista.peticiones.listarUsuarios();
+                        }
+                    })
+                }
+            },
+            accionesBotonEliminar: {
+                ejecutar: function (element){
+                    Swal.fire({
+                        title: '¿Desea eliminar este usuario?',
+                        text: "Al eliminar esta cuenta no se podrán recuperar los datos",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Eliminar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            var id = element.dataset.userid;
+                            var obj = {
+                                id: id,
+                            };
+                            vista.peticiones.eliminarUsuario(obj);
                         }
                     })
                 }
@@ -62,6 +77,7 @@ var vista = {
                         tbody.html(vista.utils.templates.noHayRegistros());
                     }
                     vista.controles.botonActivar = $('.activar');
+                    vista.controles.botonEliminar = $('.eliminar');
                 }
             },
             activarUsuario:{
@@ -77,9 +93,31 @@ var vista = {
                         Swal.fire('Usuario Activado',
                             'Se ha activado correctamente el usuario',
                             'success');
+                        vista.peticiones.listarUsuarios();
                         return;
                     }
                     Swal.fire('Error',
+                        respuesta.mensaje,
+                        'error');
+                }
+            },
+            eliminarUsuario:{
+                beforeSend: function () {
+                    vista.controles.botonEliminar.prop('disabled', true);
+                    //propiedades botón
+                },
+                completo: function () {
+                    vista.controles.botonEliminar.prop('disabled', false);
+                },
+                finalizado: function (respuesta) {
+                    if (__app.validarRespuesta(respuesta)) {
+                        Swal.fire('Usuario Eliminado',
+                            'Se ha eliminado el usuario correctamente',
+                            'success');
+                        vista.peticiones.listarUsuarios();
+                        return;
+                    }
+                    Swal.fire('Error al eliminar el usuario',
                         respuesta.mensaje,
                         'error');
                 }
@@ -101,6 +139,14 @@ var vista = {
                 .success(vista.callbacks.peticiones.activarUsuario.finalizado)
                 .error(vista.callbacks.peticiones.activarUsuario.finalizado)
                 .send();
+        },
+        eliminarUsuario: function (obj){
+            __app.post(RUTAS_API.USUARIOS.ELIMINAR,obj)
+                .beforeSend(vista.callbacks.peticiones.eliminarUsuario.beforeSend)
+                .complete(vista.callbacks.peticiones.eliminarUsuario.completo)
+                .success(vista.callbacks.peticiones.eliminarUsuario.finalizado)
+                .error(vista.callbacks.peticiones.eliminarUsuario.finalizado)
+                .send();
         }
     },
     utils: {
@@ -113,9 +159,11 @@ var vista = {
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
                     +'<td>'
-                    +'<button class="activar" data-userid="'+btoa(obj.id)+'" onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)" >Activar</button>'
+                    +'<button class="activar" data-userid="'+btoa(obj.id)+'" ' +
+                    'onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)">Activar</button>'
                     +' | '
-                    +'<a href="javascript:;" class="btn-accion eliminar">Eliminar</a>'
+                    +'<button class="eliminar" data-userid="'+btoa(obj.id)+'" ' +
+                    'onclick="vista.callbacks.eventos.accionesBotonEliminar.ejecutar(this)">Eliminar</button>'
                     +'<td>'
                     +'<tr>'
             },

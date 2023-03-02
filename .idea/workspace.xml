@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="registro y tabla de usuarios pendientes">
-      <change beforePath="$PROJECT_DIR$/.idea/crud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/registro.alumnos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/loginalumnos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/registroalumnos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pagos/productos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/alumnos.buscar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/alumnos.buscar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/listausuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/pagos.registrar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/pagos/pagos.registrar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/alumnos/homeAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/alumnos/homealumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +67,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
-      <server host="http://localhost/crud" id="5379af2e-e576-4308-a39c-0ddcb3503bbb" name="http://localhost/crud" />
+      <server host="http://localhost/crud" id="5379af2e-e576-4308-a39c-0ddcb3503bbb" name="http://localhost/crud" port="9000" />
+      <server host="localhost" id="183b3a8e-28c7-46da-b731-483a989aa944" name="localhost" />
     </servers>
   </component>
   <component name="ProjectId" id="2LF4dAB3RJBTerVKnRpDJStwAzd" />
@@ -73,26 +87,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/http/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/alumnos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\crud\resources\views\alumnos" />
       <recent name="C:\xampp\htdocs\crud\app\http\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\crud\assets\js\modulos\pagos" />
+      <recent name="C:\xampp\htdocs\crud\assets\js\modulos\alumnos" />
       <recent name="C:\xampp\htdocs\crud\resources\views\usuarios" />
       <recent name="C:\xampp\htdocs\crud\resources\views\pagos" />
       <recent name="C:\xampp\htdocs\crud\resources\views\calificaciones" />
-      <recent name="C:\xampp\htdocs\crud\assets\svg" />
-      <recent name="C:\xampp\htdocs\crud\assets\png" />
     </key>
   </component>
   <component name="RunManager">
@@ -136,7 +151,9 @@
       <workItem from="1677474270440" duration="5381000" />
       <workItem from="1677510221249" duration="19926000" />
       <workItem from="1677546015585" duration="1157000" />
-      <workItem from="1677595963943" duration="9199000" />
+      <workItem from="1677595963943" duration="11108000" />
+      <workItem from="1677608940721" duration="12444000" />
+      <workItem from="1677682367306" duration="16245000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -236,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677604328124</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="sweetalert dialogo de activar usuario">
+      <created>1677607024057</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677607024057</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +291,8 @@
     <MESSAGE value="registro y tabla de usuarios pendientes" />
     <MESSAGE value="changes" />
     <MESSAGE value="sweetalert activar usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="sweetalert activar usuario" />
+    <MESSAGE value="sweetalert dialogo de activar usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="sweetalert dialogo de activar usuario" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

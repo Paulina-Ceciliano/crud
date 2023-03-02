@@ -6,12 +6,15 @@ var RUTAS_API = {
         LOGIN: 'usuarios/login',
         HOME: 'usuarios/home',
         ACTIVAR: 'usuarios/actualizarEstatus',
+        ELIMINAR: 'usuarios/eliminarUsuario',
     },
     PAGOS:{
         REGISTRAR_PAGO: 'pagos/registrarPagos'
     },
 
     ALUMNOS:{
-        BUSCAR: '/alumnos/buscar_alumnos'
+        BUSCAR: 'alumnos/buscar_alumnos',
+        REGISTRAR_ALUMNO: 'alumnos/registrar',
+        LOGIN: 'alumnos/login'
     }
 };

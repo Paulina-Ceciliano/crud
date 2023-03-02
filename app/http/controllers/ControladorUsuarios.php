@@ -106,7 +106,8 @@ class ControladorUsuarios extends Controller
         return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
     }
 
-    public function eliminarusuario($idUsuario) {
+    public function eliminarusuario(Request $request) {
+        $idUsuario = base64_decode($request->id);
         $usuarioModel = new Usuarios();
         $eliminados = $usuarioModel->where("id", " = ", $idUsuario)->delete();
         $v = ($eliminados > 0);

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-02-2023 a las 17:09:48
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 02-03-2023 a las 20:06:39
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,23 +24,65 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
+-- Estructura de tabla para la tabla `alumnos`
 --
 
-CREATE TABLE `roles` (
+CREATE TABLE `alumnos` (
   `id` int(11) NOT NULL,
-  `rol` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `matricula` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
+  `promocion` int(11) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `estatus` tinyint(3) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `roles`
+-- Volcado de datos para la tabla `alumnos`
 --
 
-INSERT INTO `roles` (`id`, `rol`) VALUES
-(1, 'Administrador'),
-(2, 'Alumno'),
-(3, 'Alumno'),
-(4, 'Alumno');
+INSERT INTO `alumnos` (`id`, `matricula`, `nombre`, `apellido`, `promocion`, `correo`, `password`, `estatus`, `fecha`) VALUES
+(6, 1234, 'Nancy', 'Ceciliano', 1, 'ceci@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0, '2023-03-02 16:56:58'),
+(7, 345, 'Kevin', 'Diaz', 1, 'kev@mail.com', '3bad6af0fa4b8b330d162e19938ee981', 0, '2023-03-02 16:56:58'),
+(8, 12345, 'Alfonso', 'Escarcha', 1, 'nancy@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0, '2023-03-02 18:56:21'),
+(9, 345222, 'Alfonso', 'banana', 1, 'mail@mailmail.com', '5d793fc5b00a2348c3fb9ab59e5ca98a', 0, '2023-03-02 19:01:25'),
+(10, 123452, 'Nancy', 'Diaz', 184, 'mail@maaaaaaaaiil.com', '81dc9bdb52d04dc20036dbd8313ed055', 0, '2023-03-02 19:03:04'),
+(11, 8957, 'Juanito', 'Banano', 184, 'banana@mail.com', 'bb8e9af523e4aeffa88f1807fb2af9ce', 0, '2023-03-02 19:04:16'),
+(12, 12345211, 'Nancy', 'Ceciliano', 184, 'pau@mailmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0, '2023-03-02 19:05:38');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
+CREATE TABLE `calificaciones` (
+  `id` int(11) NOT NULL,
+  `profesor` int(11) NOT NULL,
+  `alumno` int(11) NOT NULL,
+  `materia` int(11) NOT NULL,
+  `calificacion` int(11) NOT NULL,
+  `periodo` varchar(50) NOT NULL,
+  `comentarios` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagos`
+--
+
+CREATE TABLE `pagos` (
+  `id` int(11) NOT NULL,
+  `cobrador` int(11) NOT NULL,
+  `alumno` int(11) NOT NULL,
+  `concepto` varchar(255) NOT NULL,
+  `monto` int(11) NOT NULL,
+  `atraso` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -52,71 +94,96 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
   `correo` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `fecha` varchar(10) NOT NULL,
-  `idRol` int(11) NOT NULL,
-  `estatus` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `estatus` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `username`, `correo`, `password`, `fecha`, `idRol`, `estatus`) VALUES
-(20, 'Juan', 'Perez', 'juanperez', 'juanp@mail.com', '123456', '2020-01-01', 1, 'Activo'),
-(33, 'Prueba', 'Prueba', 'Prueba', 'prb@mail.com', 'azsdasdasd', 'fecha', 1, 'Inactivo'),
-(35, 'Prueba 2', 'Prueba 2', 'prb 2', 'prb2@mail.com', '12345', 'Fecha', 1, 'Inactivo'),
-(36, 'Prueba 3', 'Prueba 3', 'prb 3', 'prb3@gmail.com', 'asdasdasd', '06-02-2023', 1, 'Inactivo'),
-(37, 'Adrian', 'Arroyo', 'GibAdrian', 'adrian@clico.mx', 'QWERTY12345', '06-02-2023', 1, 'Inactivo'),
-(38, 'Paulina', 'Ceciliano', 'Pau', 'pau@mail.com', '123123123', '06-02-2023', 1, 'Inactivo'),
-(39, 'md5', 'md5', 'md5', 'md5@mail.com', '827ccb0eea8a706c4c34a16891f84e7b', '06-02-2023', 1, 'Inactivo'),
-(40, 'nuevo', 'nuevo', 'nuevo', 'new@mail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4', '06-02-2023', 1, 'Inactivo'),
-(41, 'Paulina', 'Ceciliano', 'Ceci2', 'ceci@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', '07-02-2023', 2, 'Inactivo');
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `password`, `fecha`, `estatus`) VALUES
+(6, 'Alfonso', 'Escarcha', 'alfonso@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-28 22:26:07', 2);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `roles`
+-- Indices de la tabla `alumnos`
 --
-ALTER TABLE `roles`
+ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `profesor` (`profesor`,`alumno`),
+  ADD KEY `alumno` (`alumno`);
+
+--
+-- Indices de la tabla `pagos`
+--
+ALTER TABLE `pagos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cobrador` (`cobrador`,`alumno`),
+  ADD KEY `alumno` (`alumno`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idRol` (`idRol`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `roles`
+-- AUTO_INCREMENT de la tabla `alumnos`
 --
-ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `alumnos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pagos`
+--
+ALTER TABLE `pagos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `usuarios`
+-- Filtros para la tabla `calificaciones`
 --
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idRol`) REFERENCES `roles` (`id`);
+ALTER TABLE `calificaciones`
+  ADD CONSTRAINT `calificaciones_ibfk_1` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `calificaciones_ibfk_2` FOREIGN KEY (`profesor`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `pagos`
+--
+ALTER TABLE `pagos`
+  ADD CONSTRAINT `pagos_ibfk_1` FOREIGN KEY (`alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pagos_ibfk_2` FOREIGN KEY (`cobrador`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

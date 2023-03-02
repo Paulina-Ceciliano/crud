@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="registro y tabla de usuarios pendientes">
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/registro.alumnos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/loginalumnos.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/registroalumnos.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pagos/productos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/listaralumnos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorUsuarios.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modulos/alumnos.buscar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/alumnos.buscar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/lista.usuarios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modulos/pagos.registrar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/pagos/pagos.registrar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/registrar.usuarios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/alumnos/homeAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/alumnos/homealumnos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +57,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="http://localhost/crud" id="5379af2e-e576-4308-a39c-0ddcb3503bbb" name="http://localhost/crud" port="9000" />
@@ -153,7 +142,8 @@
       <workItem from="1677546015585" duration="1157000" />
       <workItem from="1677595963943" duration="11108000" />
       <workItem from="1677608940721" duration="12444000" />
-      <workItem from="1677682367306" duration="16245000" />
+      <workItem from="1677682367306" duration="17562000" />
+      <workItem from="1677770361593" duration="13486000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -260,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677607024057</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="registro alumnos">
+      <created>1677717262513</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677717262513</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +289,8 @@
     <MESSAGE value="changes" />
     <MESSAGE value="sweetalert activar usuario" />
     <MESSAGE value="sweetalert dialogo de activar usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="sweetalert dialogo de activar usuario" />
+    <MESSAGE value="registro alumnos" />
+    <option name="LAST_COMMIT_MESSAGE" value="registro alumnos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

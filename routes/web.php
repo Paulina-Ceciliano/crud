@@ -20,6 +20,8 @@ Route::get("calificaciones/form/eliminar",ControladorCalificaciones::class."@reg
 //ALUMNOS
 Route::get("alumnos/formRegistro",ControladorAlumnos::class."@registroVista");
 Route::get("alumnos/formLogin",ControladorAlumnos::class."@loginVista");
+Route::get("alumnos/listaAlumnos",ControladorAlumnos::class."@listaVista");
+Route::get("alumnos/listarAlumnos",ControladorAlumnos::class."@listaAlumnos");
 
 
 //RECURSOS Administrativo IGM

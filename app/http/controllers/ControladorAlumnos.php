@@ -16,6 +16,10 @@ class ControladorAlumnos extends Controller
         return $this->view("alumnos/loginalumnos");
     }
 
+    public function listaVista(){
+        return $this->view("alumnos/listaralumnos");
+    }
+
     public function buscarAlumno(Request $request) {
         $alumnoModel = new Alumnos();
         $alumnos = $alumnoModel->orWhere("matricula", " LIKE% ", $request->alumno)
@@ -29,32 +33,28 @@ class ControladorAlumnos extends Controller
     }
 
     public function registro(Request $request) {
-        $alumnosModelo = new Alumnos();
-        $alumno = $alumnosModelo->where("correo", "=", $request->correo)->first();
+        $alumnoModel = new Alumnos();
+        $alumno = $alumnoModel->where("correo", "=", $request->correo)->orWhere("matricula", "=", $request->matricula)->first();
         if ($alumno) {
-            return new Respuesta(EMensajes::ERROR, "El correo o nombre de usuario ya se encuentran registrados.");
+            return new Respuesta(EMensajes::ERROR, "El correo o matricula ya se encuentran registrados.");
         }
         //Esto se hace para añadir campos al request
-        $request->__set('estatus', $alumnosModelo::ESTATUS_INACTIVO);
+        $request->__set('estatus', 1);
+        $request->__set('promocion',184);
         $request->password = md5($request->password);
-        $request->__set('promocion',1);
 
-        $id = $alumnosModelo->insert($request->all());
+        $id = $alumnoModel->insert($request->all());
         $v = ($id > 0);
         $respuesta = new Respuesta($v ? EMensajes::INSERCION_EXITOSA : EMensajes::ERROR_INSERSION);
         return $respuesta;
     }
 
-    public function login(Request $request) {
-        $alumnosModelo = new Alumnos();
-        $alumnos = $alumnosModelo->where("correo", "=", $request->correo)
-            ->where("password", "=", md5($request->password))
-            ->where("estatus", "=",2)->first();
-
-        if ($alumnos) {
-            return new Respuesta(EMensajes::CORRECTO, "Se hace login");
-        }
-
-        return new Respuesta(EMensajes::ERROR, "Datos de usuario no encontrados o incorrectos");
+    public function listaAlumnos() {
+        $alumnoModel = new Alumnos();
+        $lista = $alumnoModel->where('estatus','=',1)->get();
+        $v = count($lista);
+        $respuesta = new Respuesta($v ? EMensajes::CORRECTO : EMensajes::ERROR);
+        $respuesta->setDatos($lista);
+        return $respuesta;
     }
 }

@@ -14,8 +14,8 @@ var RUTAS_API = {
 
     ALUMNOS:{
         BUSCAR: 'alumnos/buscar_alumnos',
-        REGISTRAR_ALUMNO: 'alumnos/registrar',
-        LOGIN: 'alumnos/login',
+        REGISTRAR_ALUMNO: 'alumnos/formRegistrar',
+        LOGIN: 'alumnos/formLogin',
         LISTAR: 'alumnos/listarAlumnos',
         ACTIVAR: 'alumnos/activar',
         ELIMINAR: 'alumnos/eliminar',

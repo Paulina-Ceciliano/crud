@@ -18,8 +18,8 @@ Route::get("calificaciones/form/editar",ControladorCalificaciones::class."@regis
 Route::get("calificaciones/form/eliminar",ControladorCalificaciones::class."@registroVista");
 
 //ALUMNOS
-Route::get("alumnos/formRegistro",ControladorAlumnos::class."@registroVista");
-Route::get("alumnos/formLogin",ControladorAlumnos::class."@loginVista");
+Route::get("alumnos/registro",ControladorAlumnos::class."@registroVista");
+Route::get("alumnos/login",ControladorAlumnos::class."@loginVista");
 Route::get("alumnos/listaAlumnos",ControladorAlumnos::class."@listaVista");
 Route::get("alumnos/listarAlumnos",ControladorAlumnos::class."@listaAlumnos");
 
@@ -33,5 +33,8 @@ Route::post("/usuarios/actualizarEstatus", ControladorUsuarios::class."@activarU
 Route::post("/usuarios/eliminarUsuario", ControladorUsuarios::class."@eliminarusuario");
 
 //ALUMNOS RECURSOS
-Route::post("alumnos/registrar",ControladorAlumnos::class."@registro");
-Route::post("alumnos/login",ControladorAlumnos::class."@login");
+Route::post("alumnos/formRegistrar",ControladorAlumnos::class."@registro");
+Route::post("alumnos/formLogin",ControladorAlumnos::class."@login");
+Route::post("alumnos/activar",ControladorAlumnos::class."@activarAlumno");
+Route::post("alumnos/eliminar",ControladorAlumnos::class."@eliminarAlumno");
+

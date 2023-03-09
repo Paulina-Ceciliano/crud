@@ -20,7 +20,7 @@
                 <h1>Solicitudes de Alumnos</h1>
             </div>
             <div>
-                <a href="crearusuario"></a>
+                <a href="../../../index.php"></a>
                 <a href="<?= URL::to("alumnos/formRegistro") ?>" class="btn btn-primary">Crear usuario</a>
             </div>
             <div>
@@ -32,11 +32,11 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Matrícula</th>
-                        <th>Promoción</th>
                         <th>Correo</th>
                         <th>Fecha</th>
                         <th>Estatus</th>
                         <th>Acciones</th>
+                        <th>Mensualidad/Promo</th>
                     </tr>
                     </thead>
                     <tbody>

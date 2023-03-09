@@ -17,7 +17,7 @@ class ControladorAlumnos extends Controller
     }
 
     public function listaVista(){
-        return $this->view("alumnos/listaralumnos");
+        return $this->view("usuarios/listaralumnos");
     }
 
     public function buscarAlumno(Request $request) {
@@ -30,6 +30,19 @@ class ControladorAlumnos extends Controller
         $respuesta = new Respuesta($v ? EMensajes::CORRECTO : EMensajes::NO_HAY_REGISTROS);
         $respuesta->setDatos($alumnos);
         return $respuesta;
+    }
+
+    public function login(Request $request){
+        $alumnoModel = new Alumnos();
+        $alumno = $alumnoModel->where("correo", "=", $request->correo)
+            ->where("password", "=", md5($request->password))
+            ->where("estatus", "=",2)->first();
+
+        if ($alumno) {
+            return new Respuesta(EMensajes::CORRECTO, "Se hace login");
+        }
+
+        return new Respuesta(EMensajes::ERROR, "Datos de usuario no encontrados o incorrectos");
     }
 
     public function registro(Request $request) {
@@ -57,4 +70,36 @@ class ControladorAlumnos extends Controller
         $respuesta->setDatos($lista);
         return $respuesta;
     }
+
+    public function activarAlumno(Request $request){
+        $idAlumno = base64_decode($request->id);
+        $alumnosModel = new Alumnos();
+        $alumno = $alumnosModel->where("id", " = ", $idAlumno)->first();
+        $alumnoArray = [
+            'id'=>$alumno->id,
+            'matricula'=>$alumno->matricula,
+            'nombre'=>$alumno->nombre,
+            'apellido'=>$alumno->apellido,
+            'promocion'=>$alumno->promocion,
+            'correo'=>$alumno->correo,
+            'password'=>$alumno->password,
+            'fecha'=>$alumno->fecha,
+            'estatus'=>2
+        ];
+        $alumnoActivado = $alumnosModel->update($alumnoArray);
+        $v = ($alumnoActivado > 0);
+        return new Respuesta($v ? EMensajes::ACTUALIZACION_EXITOSA : EMensajes::ERROR_ACTUALIZACION);
+}
+    public function eliminarAlumno(Request $request) {
+        $idAlumno = base64_decode($request->id);
+        $alumnoModel = new Alumnos();
+        $eliminados = $alumnoModel->where("id", " = ", $idAlumno)->delete();
+        $v = ($eliminados > 0);
+        return new Respuesta($v ? EMensajes::ELIMINACION_EXITOSA : EMensajes::ERROR_ELIMINACION);
+    }
+
+    public function agregarPromo(){
+
+    }
+
 }

@@ -156,17 +156,22 @@ var vista = {
                     +'<td>'+ obj.nombre +'</td>'
                     +'<td>'+ obj.apellido +'</td>'
                     +'<td>'+ obj.matricula +'</td>'
-                    +'<td>'+ obj.promocion +'</td>'
                     +'<td>'+ obj.correo +'</td>'
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
                     +'<td>'
-                    +'<button class="activar" data-userid="'+btoa(obj.id)+'" ' +
+                    +'<button class="activar" disabled data-userid="'+btoa(obj.id)+'" ' +
                     'onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)">Activar</button>'
                     +' | '
                     +'<button class="eliminar" data-userid="'+btoa(obj.id)+'" ' +
                     'onclick="vista.callbacks.eventos.accionesBotonEliminar.ejecutar(this)">Eliminar</button>'
                     +'<td>'
+                    +'<select>' +
+                    '<option value="">Seleccione</option>'+
+                    '<option value="1">1300</option>'+
+                    '<option value="2">1500</option>'+
+                    '<option value="3">2000</option>'+
+                    '</select>'
                     +'<tr>'
             },
             consultando: function () {

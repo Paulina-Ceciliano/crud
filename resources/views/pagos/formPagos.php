@@ -74,7 +74,7 @@
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/plugins/sweetalert/sweetalert.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/modulos/pagos.registrar.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/alumnos.buscar.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/buscar.alumnos.js") ?>" type="text/javascript"></script>
 </body>
 </html>
 

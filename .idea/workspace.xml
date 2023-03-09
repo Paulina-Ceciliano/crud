@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a3a09e-d691-47a7-8c97-13842c00ad03" name="Changes" comment="registro y tabla de usuarios pendientes">
-      <change afterPath="$PROJECT_DIR$/resources/views/alumnos/listaralumnos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/login.alumnos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/http/controllers/ControladorAlumnos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistencia/modelos/Alumnos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/global/rutas.api.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/global/rutas.api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modulos/alumnos/alumnos.buscar.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/buscar.alumnos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modulos/alumnos/listar.alumnos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/alumnos/listaralumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/usuarios/listaralumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/alumnos/loginalumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/alumnos/loginalumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/alumnos/registroalumnos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/alumnos/registroalumnos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/formPagos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pagos/listapagos.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pagos/listapagos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,9 +97,9 @@
       <recent name="C:\xampp\htdocs\crud\app\http\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\crud\resources\views\usuarios" />
       <recent name="C:\xampp\htdocs\crud\assets\js\modulos\pagos" />
       <recent name="C:\xampp\htdocs\crud\assets\js\modulos\alumnos" />
-      <recent name="C:\xampp\htdocs\crud\resources\views\usuarios" />
       <recent name="C:\xampp\htdocs\crud\resources\views\pagos" />
       <recent name="C:\xampp\htdocs\crud\resources\views\calificaciones" />
     </key>
@@ -143,7 +148,11 @@
       <workItem from="1677595963943" duration="11108000" />
       <workItem from="1677608940721" duration="12444000" />
       <workItem from="1677682367306" duration="17562000" />
-      <workItem from="1677770361593" duration="13486000" />
+      <workItem from="1677770361593" duration="14185000" />
+      <workItem from="1677855960420" duration="6656000" />
+      <workItem from="1678117680501" duration="2285000" />
+      <workItem from="1678201632350" duration="9134000" />
+      <workItem from="1678375384025" duration="3351000" />
     </task>
     <task id="LOCAL-00001" summary="rutas">
       <created>1675455008318</created>
@@ -257,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677717262513</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="listar alumnos">
+      <created>1677792353379</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677792353379</updated>
+    </task>
+    <task id="LOCAL-00018" summary="listar alumnos">
+      <created>1677792410987</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677792410987</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +313,8 @@
     <MESSAGE value="sweetalert activar usuario" />
     <MESSAGE value="sweetalert dialogo de activar usuario" />
     <MESSAGE value="registro alumnos" />
-    <option name="LAST_COMMIT_MESSAGE" value="registro alumnos" />
+    <MESSAGE value="listar alumnos" />
+    <option name="LAST_COMMIT_MESSAGE" value="listar alumnos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

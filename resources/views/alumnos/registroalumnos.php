@@ -23,7 +23,7 @@
             </div>
             <hr/>
             <h3>Datos del Alumno: </h3>
-            <form id="formAlumnos" action="alumnos/registrar" method="POST">
+            <form id="formAlumnos" action="alumnos/formRegistrar" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre(s)(*)</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required="required"/>

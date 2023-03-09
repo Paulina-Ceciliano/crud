@@ -24,7 +24,6 @@
                 <table class="table" id="tablaListaPagos">
                     <thead>
                     <tr>
-                        <th>Cobrador</th>
                         <th>Alumno</th>
                         <th>Concepto</th>
                         <th>Atraso</th>

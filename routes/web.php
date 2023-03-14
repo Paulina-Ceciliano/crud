@@ -20,7 +20,7 @@ Route::get("calificaciones/form/eliminar",ControladorCalificaciones::class."@reg
 //ALUMNOS
 Route::get("alumnos/registro",ControladorAlumnos::class."@registroVista");
 Route::get("alumnos/login",ControladorAlumnos::class."@loginVista");
-Route::get("alumnos/listaAlumnos",ControladorAlumnos::class."@listaVista");
+Route::get("alumnos/lista",ControladorAlumnos::class."@listaVista");
 Route::get("alumnos/listarAlumnos",ControladorAlumnos::class."@listaAlumnos");
 
 

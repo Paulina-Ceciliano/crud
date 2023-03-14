@@ -4,12 +4,6 @@
     <title>IGM</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<style>
-    .table {
-        border: #0d0d0e 1px;
-        border-collapse: collapse;
-    }
-</style>
 <body data-urlbase="<?= URL::base() ?>">
 <nav>
     <ul>

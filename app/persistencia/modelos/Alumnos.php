@@ -11,6 +11,7 @@ class Alumnos extends ModeloGenerico
     protected $password;
     protected $promocion;
     protected $fecha;
+    protected $estatus;
 
     public const ESTATUS_INACTIVO = 1;
     public const ESTATUS_ACTIVO = 2;
@@ -145,6 +146,22 @@ class Alumnos extends ModeloGenerico
     public function setFecha($fecha): void
     {
         $this->fecha = $fecha;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+
+    /**
+     * @param mixed $estatus
+     */
+    public function setEstatus($estatus): void
+    {
+        $this->estatus = $estatus;
     }
 
 

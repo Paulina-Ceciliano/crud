@@ -17,11 +17,7 @@
     <div class="contenedor-principal">
         <div>
             <div>
-                <h1>Solicitudes de Alumnos</h1>
-            </div>
-            <div>
-                <a href="../../../index.php"></a>
-                <a href="<?= URL::to("alumnos/formRegistro") ?>" class="btn btn-primary">Crear usuario</a>
+                <h1>Solicitudes</h1>
             </div>
             <div>
                 <hr/>
@@ -31,20 +27,23 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Matrícula</th>
                         <th>Correo</th>
                         <th>Fecha</th>
                         <th>Estatus</th>
+                        <th>Promo Mensualidad</th>
                         <th>Acciones</th>
-                        <th>Mensualidad/Promo</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td colspan="8">Consultando...</td>
+                        <td colspan="6">Consultando...</td>
                     </tr>
                     </tbody>
                 </table>
+                <div class="btn-group">
+                    <a href="crearusuario"></a>
+                    <a href="<?= URL::to("usuarios/form/crear") ?>" class="btn btn-primary">Crear usuario</a>
+                </div>
             </div>
         </div>
     </div>
@@ -54,6 +53,6 @@
 <script src="<?= URL::to("assets/js/global/helperform.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/rutas.api.js") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/global/app.global.js") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/modulos/alumnos/listar.alumnos.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/modulos/listar.alumnos.js") ?>" type="text/javascript"></script>
 </body>
 </html>

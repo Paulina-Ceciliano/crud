@@ -62,15 +62,18 @@ var vista = {
                 completo: function (respuesta) {//respuesta del controlador
                     var tbody = vista.controles.tbodyListaUsuarios;
                     var datos = __app.parsearRespuesta(respuesta); //construye un array
-                    if (datos && datos.length > 0) {
+                    var alumnos = datos['alumnos'];
+                    var promociones = datos['promociones'];
+                    if (alumnos && alumnos.length > 0) {
                         tbody.html('');
-                        for (var i = 0; i < datos.length; i++) {
-                            var dato = datos[i];
+                        for (var i = 0; i < alumnos.length; i++) {
+                            var dato = alumnos[i];
                             if(dato['estatus']== 1){
                                 dato['estatus']='Inactivo';
                             }else if(dato['estatus']== 2){
                                 dato['estatus']='Activo';
                             }
+                            dato['promociones']=promociones;
                             tbody.append(vista.utils.templates.item(dato));
                         }
                     } else {
@@ -156,22 +159,16 @@ var vista = {
                     +'<td>'+ obj.nombre +'</td>'
                     +'<td>'+ obj.apellido +'</td>'
                     +'<td>'+ obj.matricula +'</td>'
-                    +'<td>'+ obj.correo +'</td>'
                     +'<td>'+ obj.fecha +'</td>'
                     +'<td>'+ obj.estatus +'</td>'
+                    +'<td>'+ vista.utils.templates.selectPromociones(obj) +'</td>'
                     +'<td>'
-                    +'<button class="activar" disabled data-userid="'+btoa(obj.id)+'" ' +
+                    +'<button class="activar" data-userid="'+btoa(obj.id)+'" ' +
                     'onclick="vista.callbacks.eventos.accionesBotonActivar.ejecutar(this)">Activar</button>'
                     +' | '
                     +'<button class="eliminar" data-userid="'+btoa(obj.id)+'" ' +
                     'onclick="vista.callbacks.eventos.accionesBotonEliminar.ejecutar(this)">Eliminar</button>'
                     +'<td>'
-                    +'<select>' +
-                    '<option value="">Seleccione</option>'+
-                    '<option value="1">1300</option>'+
-                    '<option value="2">1500</option>'+
-                    '<option value="3">2000</option>'+
-                    '</select>'
                     +'<tr>'
             },
             consultando: function () {
@@ -179,6 +176,14 @@ var vista = {
             },
             noHayRegistros: function () {
                 return '<tr><td colspan="6">No hay registros...</td></tr>';
+            },
+            selectPromociones: function(obj){
+
+
+                return '<select id="Promociones'+obj.id+'">'+vista.utils.templates.optionPromociones(obj.promociones) +'</select>';
+            },
+            optionPromociones: function(obj){
+
             }
         }
     },
